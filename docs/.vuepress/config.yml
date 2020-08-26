@@ -1,0 +1,159 @@
+title: ''
+description: 'Welcome to fastai'
+base: '/fastai/'
+markdown: 
+  extractHeaders: ['h2', 'h3', 'h4']
+themeConfig:
+  logo: 'https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png'
+  repo: 'fastai/fastai'
+  repoLabel: 'GitHub'
+  sidebar: 'auto'
+  sidebarDepth: 4
+  displayAllHeaders: true
+  nav:
+    - text: 'Getting Started'
+      items:
+        - text: 'Overview'
+          link: '/'
+        - text: 'Quick Start'
+          link: '/quick_start'
+    - text: 'Tutorials'
+      items:
+        - text: 'Overview'
+          link: 'overview.md'
+        - text: 'Beginners'
+          items:
+            - text: 'Vision Tutorial'
+              link: '/tutorial/vision'
+            - text: 'Text Tutorial'
+              link: '/tutorial/text'
+            - text: 'Tabular Tutorial'
+              link: '/tutorial/tabular'
+            - text: 'Colab Tutorial'
+              link: '/tutorial/colab'
+        - text: 'Intermediate'
+          items:
+            - text: 'Data Block Tutorial'
+              link: '/tutorial/datablock'
+            - text: 'Imagenette Tutorial'
+              link: '/tutorial/imagenette'
+            - text: 'Pets Tutorial'
+              link: '/tutorial/pets'
+            - text: 'Transformers Tutorial'
+              link: '/tutorial/transformers'
+            - text: 'Wikitext Tutorial'
+              link: '/tutorial/wikitext'
+        - text: 'Advanced'
+          items:
+            - text: 'Siamese Tutorial'
+              link: '/tutorial/siamese'
+            - text: 'Developer Guide'
+              link: '/dev-setup'
+    - text: 'Training'
+      items:
+        - text: 'Training Loop'
+          link: '/training/learner'
+        - text: 'Optimizer'
+          link: '/training/optimizer'
+        - text: 'Metrics'
+          link: '/training/metrics'
+        - text: 'Interpretation'
+          link: '/training/interpret'
+        - text: 'Distributed'
+          link: '/training/distributed'
+        - text: 'Callbacks'
+          items:
+            - text: 'Core'
+              link: '/callback/core'
+            - text: 'Schedulers'
+              link: '/callback/schedule'
+            - text: 'Hooks and callbacks'
+              link: '/callback/hook'
+            - text: 'Mixed precision'
+              link: '/callback/fp16'
+            - text: 'Mixup'
+              link: '/callback/mixup'
+            - text: 'Cutmix'
+              link: '/callback/cutmix'
+            - text: 'Tracker'
+              link: '/callback/tracker'
+            - text: 'Training'
+              link: '/callback/training'
+            - text: 'RNN'
+              link: '/callback/rnn'
+            - text: 'Data'
+              link: '/callback/data'
+            - text: 'Progress'
+              link: '/callback/progress'
+    - text: 'Data'
+      items:
+        - text: 'Data Blocks'
+          link: '/data/block'
+        - text: 'Data Transforms'
+          link: '/data/transforms'
+        - text: 'Data External'
+          link: '/data/external'
+        - text: 'Data Core'
+          link: '/data/core'
+        - text: 'DataLoaders'
+          link: '/data/load'
+    - text: 'Core'
+      items:
+        - text: 'PyTorch Core'
+          link: '/torch_core'
+        - text: 'Layers'
+          link: '/layers'
+    - text: 'Vision'
+      items:
+        - text: 'Vision Learner'
+          link: '/vision/learner'
+        - text: 'Vision Data Augmentation'
+          link: '/vision/augment'
+        - text: 'Vision Data'
+          link: '/vision/data'
+        - text: 'Vision Core'
+          link: '/vision/core'
+        - text: 'Vision Utils'
+          link: '/vision/utils'
+        - text: 'Vision Widgets'
+          link: '/vision/widgets'
+        - text: 'Models'
+          items:
+            - text: 'XResNet'
+              link: '/vision/models.xresnet'
+            - text: 'UNet'
+              link: '/vision/models.unet'
+    - text: 'Text'
+      items:
+      - text: 'Text Core'
+        link: '/text/core'
+      - text: 'Text Data'
+        link: '/text/data'
+      - text: 'Text Learner'
+        link: '/text/learner'
+      - text: 'Models'
+        items:
+          - text: 'Core'
+            link: '/text/models.core'
+          - text: 'AWD LSTM'
+            link: '/text/models.awdlstm'
+          - text: 'QRNN'
+            link: '/text/models.qrnn'
+    - text: 'Tabular'
+      items:
+        - text: "Tabular Core"
+          link: "/tabular/core"
+        - text: "Tabular Data"
+          link: "/tabular/data"
+        - text: "Tabular Learner"
+          link: "/tabular/learner"
+        - text: "Tabular Model"
+          link: "/tabular/model"
+        - text: "Collab"
+          link: "/collab"
+    - text: 'Medical'
+      items:
+        - text: "Medical imagery"
+          link: "/medical/imaging"
+        - text: "Medical text"
+          link: "/medical/text"
