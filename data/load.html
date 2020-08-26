@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>fastai DataLoader</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="Welcome to fastai">
+    <link rel="preload" href="/fastai/assets/css/0.styles.24b54ae9.css" as="style"><link rel="preload" href="/fastai/assets/js/app.e4c088e4.js" as="script"><link rel="preload" href="/fastai/assets/js/2.f1c4f916.js" as="script"><link rel="preload" href="/fastai/assets/js/25.7912d1b1.js" as="script"><link rel="prefetch" href="/fastai/assets/js/10.99994145.js"><link rel="prefetch" href="/fastai/assets/js/11.08687312.js"><link rel="prefetch" href="/fastai/assets/js/12.40b88a98.js"><link rel="prefetch" href="/fastai/assets/js/13.83861397.js"><link rel="prefetch" href="/fastai/assets/js/14.3a1586b8.js"><link rel="prefetch" href="/fastai/assets/js/15.1cbd093c.js"><link rel="prefetch" href="/fastai/assets/js/16.c850565b.js"><link rel="prefetch" href="/fastai/assets/js/17.9c3f07b2.js"><link rel="prefetch" href="/fastai/assets/js/18.db37b5bb.js"><link rel="prefetch" href="/fastai/assets/js/19.c91272fe.js"><link rel="prefetch" href="/fastai/assets/js/20.a9c5f90d.js"><link rel="prefetch" href="/fastai/assets/js/21.e40307f7.js"><link rel="prefetch" href="/fastai/assets/js/22.8fcdc465.js"><link rel="prefetch" href="/fastai/assets/js/23.14fb4a2d.js"><link rel="prefetch" href="/fastai/assets/js/24.720b52ea.js"><link rel="prefetch" href="/fastai/assets/js/26.366239e0.js"><link rel="prefetch" href="/fastai/assets/js/27.6db2df9e.js"><link rel="prefetch" href="/fastai/assets/js/28.ffbcb114.js"><link rel="prefetch" href="/fastai/assets/js/29.7b21b9fd.js"><link rel="prefetch" href="/fastai/assets/js/3.6e2ab6c3.js"><link rel="prefetch" href="/fastai/assets/js/30.248393fd.js"><link rel="prefetch" href="/fastai/assets/js/31.b22a56a0.js"><link rel="prefetch" href="/fastai/assets/js/32.85f7da41.js"><link rel="prefetch" href="/fastai/assets/js/33.e44ef8ee.js"><link rel="prefetch" href="/fastai/assets/js/34.9ce56e10.js"><link rel="prefetch" href="/fastai/assets/js/35.4bdc5816.js"><link rel="prefetch" href="/fastai/assets/js/36.67e5f7d9.js"><link rel="prefetch" href="/fastai/assets/js/37.36c20575.js"><link rel="prefetch" href="/fastai/assets/js/38.06c462ff.js"><link rel="prefetch" href="/fastai/assets/js/39.749b6672.js"><link rel="prefetch" href="/fastai/assets/js/4.a083dd6e.js"><link rel="prefetch" href="/fastai/assets/js/40.c732859b.js"><link rel="prefetch" href="/fastai/assets/js/41.4474ab47.js"><link rel="prefetch" href="/fastai/assets/js/42.5ee2fc2f.js"><link rel="prefetch" href="/fastai/assets/js/43.cc635513.js"><link rel="prefetch" href="/fastai/assets/js/44.152c8da5.js"><link rel="prefetch" href="/fastai/assets/js/45.4cff1d71.js"><link rel="prefetch" href="/fastai/assets/js/46.85dce95d.js"><link rel="prefetch" href="/fastai/assets/js/47.59fb5617.js"><link rel="prefetch" href="/fastai/assets/js/48.f20ef06e.js"><link rel="prefetch" href="/fastai/assets/js/49.9625880a.js"><link rel="prefetch" href="/fastai/assets/js/5.bb68e855.js"><link rel="prefetch" href="/fastai/assets/js/50.b2e6dee9.js"><link rel="prefetch" href="/fastai/assets/js/51.267442e2.js"><link rel="prefetch" href="/fastai/assets/js/52.10494ddd.js"><link rel="prefetch" href="/fastai/assets/js/53.093941a1.js"><link rel="prefetch" href="/fastai/assets/js/54.fbc03694.js"><link rel="prefetch" href="/fastai/assets/js/55.0b1efc19.js"><link rel="prefetch" href="/fastai/assets/js/56.5f3c1da5.js"><link rel="prefetch" href="/fastai/assets/js/57.a3e942a9.js"><link rel="prefetch" href="/fastai/assets/js/58.d3ded5e3.js"><link rel="prefetch" href="/fastai/assets/js/59.ec1d3156.js"><link rel="prefetch" href="/fastai/assets/js/6.f6c9602c.js"><link rel="prefetch" href="/fastai/assets/js/60.37aa0b8a.js"><link rel="prefetch" href="/fastai/assets/js/61.ef622343.js"><link rel="prefetch" href="/fastai/assets/js/62.e733d0f9.js"><link rel="prefetch" href="/fastai/assets/js/63.a3aa571a.js"><link rel="prefetch" href="/fastai/assets/js/64.8b06642f.js"><link rel="prefetch" href="/fastai/assets/js/65.97cf2dfa.js"><link rel="prefetch" href="/fastai/assets/js/66.7f97711c.js"><link rel="prefetch" href="/fastai/assets/js/67.31ee059f.js"><link rel="prefetch" href="/fastai/assets/js/68.d013d2de.js"><link rel="prefetch" href="/fastai/assets/js/69.50b9f11d.js"><link rel="prefetch" href="/fastai/assets/js/7.c1cdf251.js"><link rel="prefetch" href="/fastai/assets/js/70.1b6f8370.js"><link rel="prefetch" href="/fastai/assets/js/71.8c3557b5.js"><link rel="prefetch" href="/fastai/assets/js/72.2d857b7b.js"><link rel="prefetch" href="/fastai/assets/js/73.0be86c71.js"><link rel="prefetch" href="/fastai/assets/js/74.a9279ff6.js"><link rel="prefetch" href="/fastai/assets/js/75.f6ce5fb3.js"><link rel="prefetch" href="/fastai/assets/js/8.be08f3ee.js"><link rel="prefetch" href="/fastai/assets/js/9.209ff10c.js">
+    <link rel="stylesheet" href="/fastai/assets/css/0.styles.24b54ae9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fastai/" class="home-link router-link-active"><img src="https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>fastai DataLoader</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fastai/data/load.html#dataloader-helpers" class="sidebar-link">DataLoader helpers</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="fastai-dataloader"><a href="#fastai-dataloader" class="header-anchor">#</a> fastai DataLoader</h1> <blockquote><p>API compatible with PyTorch DataLoader, with a lot more callbacks and flexibility</p></blockquote> <div class="language-python extra-class"><pre class="language-python"><code>bs <span class="token operator">=</span> <span class="token number">4</span>
+letters <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span>ascii_lowercase<span class="token punctuation">)</span>
+</code></pre></div><h2 id="dataloader-helpers"><a href="#dataloader-helpers" class="header-anchor">#</a> DataLoader helpers</h2> <p>fastai includes a replacement for Pytorch's <em>DataLoader</em> which is largely API-compatible, and adds a lot of useful functionality and flexibility. Before we look at the class, there are a couple of helpers we'll need to define.</p> <h4 id="fa_collate" class="doc_header"><code>fa_collate</code><a href="https://github.com/fastai/fastai/tree/master/fastai/data/load.py#L43" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>fa_collate</code>(<strong><code>t</code></strong>)</p></blockquote> <div class="language-python extra-class"><pre class="language-python"><code>t <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+test_eq<span class="token punctuation">(</span>fa_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span> default_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>fa_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Tensor<span class="token punctuation">,</span><span class="token builtin">tuple</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+t <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+test_eq<span class="token punctuation">(</span>fa_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span> default_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>fa_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Tensor<span class="token punctuation">,</span><span class="token builtin">tuple</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>fa_collate<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Tensor<span class="token punctuation">,</span><span class="token builtin">tuple</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="fa_convert" class="doc_header"><code>fa_convert</code><a href="https://github.com/fastai/fastai/tree/master/fastai/data/load.py#L50" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>fa_convert</code>(<strong><code>t</code></strong>)</p></blockquote> <div class="language-python extra-class"><pre class="language-python"><code>t0 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+t <span class="token operator">=</span> <span class="token punctuation">[</span>t0<span class="token punctuation">,</span><span class="token punctuation">(</span>t0<span class="token punctuation">,</span>t0<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+test_eq<span class="token punctuation">(</span>fa_convert<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">,</span> default_convert<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>fa_convert<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>Tensor<span class="token punctuation">,</span><span class="token builtin">tuple</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="SkipItemException" class="doc_header"><code>class</code> <code>SkipItemException</code><a href="https://github.com/fastai/fastai/tree/master/fastai/data/load.py#L56" class="source_link" style="float:right;">[source]</a></h3> <blockquote><p><code>SkipItemException</code>() :: <code>Exception</code></p></blockquote> <p>Common base class for all non-exit exceptions.</p> <h2 id="DataLoader" class="doc_header"><code>class</code> <code>DataLoader</code><a href="torch/utils/data/dataloader.py#L60" class="source_link" style="float:right;">[source]</a></h2> <blockquote><p><code>DataLoader</code>(<strong><code>dataset</code></strong>, <strong><code>batch_size</code></strong>=<em><code>1</code></em>, <strong><code>shuffle</code></strong>=<em><code>False</code></em>, <strong><code>sampler</code></strong>=<em><code>None</code></em>, <strong><code>batch_sampler</code></strong>=<em><code>None</code></em>, <strong><code>num_workers</code></strong>=<em><code>0</code></em>, <strong><code>collate_fn</code></strong>=<em><code>None</code></em>, <strong><code>pin_memory</code></strong>=<em><code>False</code></em>, <strong><code>drop_last</code></strong>=<em><code>False</code></em>, <strong><code>timeout</code></strong>=<em><code>0</code></em>, <strong><code>worker_init_fn</code></strong>=<em><code>None</code></em>, <strong><code>multiprocessing_context</code></strong>=<em><code>None</code></em>, <strong><code>generator</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Data loader. Combines a dataset and a sampler, and provides an iterable over
+the given dataset.</p> <p>The :class:<code>~torch.utils.data.DataLoader</code> supports both map-style and
+iterable-style datasets with single- or multi-process loading, customizing
+loading order and optional automatic batching (collation) and memory pinning.</p> <p>See :py:mod:<code>torch.utils.data</code> documentation page for more details.</p> <p>Arguments:
+dataset (Dataset): dataset from which to load the data.
+batch_size (int, optional): how many samples per batch to load
+(default: <code>1</code>).
+shuffle (bool, optional): set to <code>True</code> to have the data reshuffled
+at every epoch (default: <code>False</code>).
+sampler (Sampler or Iterable, optional): defines the strategy to draw
+samples from the dataset. Can be any <code>Iterable</code> with <code>__len__</code>
+implemented. If specified, :attr:<code>shuffle</code> must not be specified.
+batch_sampler (Sampler or Iterable, optional): like :attr:<code>sampler</code>, but
+returns a batch of indices at a time. Mutually exclusive with
+:attr:<code>batch_size</code>, :attr:<code>shuffle</code>, :attr:<code>sampler</code>,
+and :attr:<code>drop_last</code>.
+num_workers (int, optional): how many subprocesses to use for data
+loading. <code>0</code> means that the data will be loaded in the main process.
+(default: <code>0</code>)
+collate_fn (callable, optional): merges a list of samples to form a
+mini-batch of Tensor(s).  Used when using batched loading from a
+map-style dataset.
+pin_memory (bool, optional): If <code>True</code>, the data loader will copy Tensors
+into CUDA pinned memory before returning them.  If your data elements
+are a custom type, or your :attr:<code>collate_fn</code> returns a batch that is a custom type,
+see the example below.
+drop_last (bool, optional): set to <code>True</code> to drop the last incomplete batch,
+if the dataset size is not divisible by the batch size. If <code>False</code> and
+the size of dataset is not divisible by the batch size, then the last batch
+will be smaller. (default: <code>False</code>)
+timeout (numeric, optional): if positive, the timeout value for collecting a batch
+from workers. Should always be non-negative. (default: <code>0</code>)
+worker_init_fn (callable, optional): If not <code>None</code>, this will be called on each
+worker subprocess with the worker id (an int in <code>[0, num_workers - 1]</code>) as
+input, after seeding and before data loading. (default: <code>None</code>)</p> <p>.. warning:: If the <code>spawn</code> start method is used, :attr:<code>worker_init_fn</code>
+cannot be an unpicklable object, e.g., a lambda function. See
+:ref:<code>multiprocessing-best-practices</code> on more details related
+to multiprocessing in PyTorch.</p> <p>.. warning:: <code>len(dataloader)</code> heuristic is based on the length of the sampler used.
+When :attr:<code>dataset</code> is an :class:<code>~torch.utils.data.IterableDataset</code>,
+it instead returns an estimate based on <code>len(dataset) / batch_size</code>, with proper
+rounding depending on :attr:<code>drop_last</code>, regardless of multi-process loading
+configurations. This represents the best guess PyTorch can make because PyTorch
+trusts user :attr:<code>dataset</code> code in correctly handling multi-process
+loading to avoid duplicate data.</p> <div class="language- extra-class"><pre><code>         However, if sharding results in multiple workers having incomplete last batches,
+         this estimate can still be inaccurate, because (1) an otherwise complete batch can
+         be broken into multiple ones and (2) more than one batch worth of samples can be
+         dropped when :attr:`drop_last` is set. Unfortunately, PyTorch can not detect such
+         cases in general.
+
+         See `Dataset Types`_ for more details on these two types of datasets and how
+         :class:`~torch.utils.data.IterableDataset` interacts with
+         `Multi-process data loading`_.
+</code></pre></div><p>Arguments to <a href="/fastai/data.load.html#DataLoader"><code>DataLoader</code></a>:</p> <ul><li><code>dataset</code>: dataset from which to load the data. Can be either map-style or iterable-style dataset.</li> <li><code>bs</code> (int): how many samples per batch to load (if <code>batch_size</code> is provided then <code>batch_size</code> will override <code>bs</code>). If <code>bs=None</code>, then it is assumed that <code>dataset.__getitem__</code> returns a batch.</li> <li><code>num_workers</code> (int): how many subprocesses to use for data loading. <code>0</code> means that the data will be loaded in the main process.</li> <li><code>pin_memory</code> (bool): If <code>True</code>, the data loader will copy Tensors into CUDA pinned memory before returning them.</li> <li><code>timeout</code> (float&gt;0): the timeout value in seconds for collecting a batch from workers.</li> <li><code>batch_size</code> (int): It is only provided for PyTorch compatibility. Use <code>bs</code>.</li> <li><code>shuffle</code> (bool): If <code>True</code>, then data is shuffled every time dataloader is fully read/iterated.</li> <li><code>drop_last</code> (bool): If <code>True</code>, then the last incomplete batch is dropped.</li> <li><code>indexed</code> (bool): Set to <code>False</code>, if you are using iterable-style dataset. Otherwise it is set to <code>True</code> by default.</li> <li><code>n</code> (int): Defaults to <code>len(dataset)</code>. If you are using iterable-style dataset, you can specify the size of batch using <code>n</code>.</li> <li><code>device</code> (torch.device): Defaults to <code>default_device()</code> which is CUDA by default. You can specify device as `torch.device('cpu').</li></ul> <p>Override <code>item</code> and use the default infinite sampler to get a stream of unknown length (<code>stop()</code> when you want to stop the stream).</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">RandDL</span><span class="token punctuation">(</span>DataLoader<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">create_item</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        r <span class="token operator">=</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> r <span class="token keyword">if</span> r<span class="token operator">&lt;</span><span class="token number">0.95</span> <span class="token keyword">else</span> stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+L<span class="token punctuation">(</span>RandDL<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>(#39) [0.24813649034165253,0.7183731274355801,0.46707243201681625,0.3819386594236871,0.37001598891686693,0.00048487460559387685,0.37430607545258365,0.28122066066872486,0.7108328343496174,0.4052328635806347...]
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>L<span class="token punctuation">(</span>RandDL<span class="token punctuation">(</span>bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> drop_last<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>(#1) [4]
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>dl <span class="token operator">=</span> RandDL<span class="token punctuation">(</span>bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> drop_last<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+L<span class="token punctuation">(</span>dl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>(#15) [4,4,4,4,4,4,4,4,4,4...]
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>test_eq<span class="token punctuation">(</span>dl<span class="token punctuation">.</span>fake_l<span class="token punctuation">.</span>num_workers<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> dl<span class="token punctuation">.</span>fake_l<span class="token punctuation">.</span>no_multiproc<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    test_eq<span class="token punctuation">(</span>dl<span class="token punctuation">.</span>fake_l<span class="token punctuation">.</span>num_workers<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    L<span class="token punctuation">(</span>dl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>dl<span class="token punctuation">.</span>fake_l<span class="token punctuation">.</span>num_workers<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">_rand_item</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    r <span class="token operator">=</span> random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> r <span class="token keyword">if</span> r<span class="token operator">&lt;</span><span class="token number">0.95</span> <span class="token keyword">else</span> stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+L<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>create_item<span class="token operator">=</span>_rand_item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>(#18) [0.09369657046580104,0.022311107860009227,0.12902272918569346,0.8060082768103013,0.2512204187078644,0.40772772960651604,0.2115850693953002,0.23026583510965482,0.7840788021237788,0.18360739628018286...]
+</code></pre></div><p>If you don't set <code>bs</code>, then <code>dataset</code> is assumed to provide an iterator or a <code>__getitem__</code> that returns a batch.</p> <div class="language-python extra-class"><pre class="language-python"><code>ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>letters<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">)</span>
+
+test_shuffled<span class="token punctuation">(</span>L<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>letters<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+
+ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>letters<span class="token punctuation">,</span> indexed<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">)</span>
+
+t2 <span class="token operator">=</span> L<span class="token punctuation">(</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ds2 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>t2<span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds2<span class="token punctuation">)</span><span class="token punctuation">,</span> t2<span class="token punctuation">)</span>
+
+t3 <span class="token operator">=</span> L<span class="token punctuation">(</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ds3 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>t3<span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds3<span class="token punctuation">)</span><span class="token punctuation">,</span> t3<span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>tensor<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ds4 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>t3<span class="token punctuation">,</span> create_batch<span class="token operator">=</span>noop<span class="token punctuation">,</span> after_iter<span class="token operator">=</span><span class="token keyword">lambda</span><span class="token punctuation">:</span> <span class="token builtin">setattr</span><span class="token punctuation">(</span>t3<span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds4<span class="token punctuation">)</span><span class="token punctuation">,</span> t3<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>t3<span class="token punctuation">.</span>f<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><p>If you do set <code>bs</code>, then <code>dataset</code> is assumed to provide an iterator or a <code>__getitem__</code> that returns a single item of a batch.</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">twoepochs</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">' '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">for</span> o <span class="token keyword">in</span> d<span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>letters<span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> drop_last<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>twoepochs<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'abcd efgh ijkl mnop qrst uvwx abcd efgh ijkl mnop qrst uvwx'</span><span class="token punctuation">)</span>
+
+ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>letters<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span>num_workers<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>twoepochs<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'abcd efgh ijkl mnop qrst uvwx yz abcd efgh ijkl mnop qrst uvwx yz'</span><span class="token punctuation">)</span>
+
+ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> L<span class="token punctuation">(</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ds1 <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> after_iter<span class="token operator">=</span><span class="token keyword">lambda</span><span class="token punctuation">:</span> <span class="token builtin">setattr</span><span class="token punctuation">(</span>t3<span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span>L<span class="token punctuation">(</span>ds1<span class="token punctuation">)</span><span class="token punctuation">,</span> L<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'0'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'3'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'4'</span><span class="token punctuation">,</span><span class="token string">'5'</span><span class="token punctuation">,</span><span class="token string">'6'</span><span class="token punctuation">,</span><span class="token string">'7'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'8'</span><span class="token punctuation">,</span><span class="token string">'9'</span><span class="token punctuation">,</span><span class="token string">'10'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span>t3<span class="token punctuation">.</span>f<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+it <span class="token operator">=</span> <span class="token builtin">iter</span><span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span>noop<span class="token punctuation">,</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_eq_type<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">next</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">SleepyDL</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">50</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__getitem__<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+t <span class="token operator">=</span> SleepyDL<span class="token punctuation">(</span>letters<span class="token punctuation">)</span>
+
+<span class="token operator">%</span>time test_eq<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>t<span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+<span class="token operator">%</span>time test_eq<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>t<span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+<span class="token operator">%</span>time test_eq<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>t<span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+
+dl <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>t<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+test_shuffled<span class="token punctuation">(</span>L<span class="token punctuation">(</span>dl<span class="token punctuation">)</span><span class="token punctuation">,</span> letters<span class="token punctuation">)</span>
+test_shuffled<span class="token punctuation">(</span>L<span class="token punctuation">(</span>dl<span class="token punctuation">)</span><span class="token punctuation">,</span> L<span class="token punctuation">(</span>dl<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>CPU times: user 8 ms, sys: 0 ns, total: 8 ms
+Wall time: 249 ms
+CPU times: user 12 ms, sys: 16 ms, total: 28 ms
+Wall time: 160 ms
+CPU times: user 20 ms, sys: 28 ms, total: 48 ms
+Wall time: 116 ms
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">SleepyQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">&quot;Simulate a queue with varying latency&quot;</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>q<span class="token operator">=</span>q
+    <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">)</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span> <span class="token keyword">yield</span> self<span class="token punctuation">.</span>q<span class="token punctuation">.</span>get_nowait<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> queues<span class="token punctuation">.</span>Empty<span class="token punctuation">:</span> <span class="token keyword">return</span>
+
+q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> o <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span> q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+it <span class="token operator">=</span> SleepyQueue<span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+
+<span class="token operator">%</span>time test_shuffled<span class="token punctuation">(</span>L<span class="token punctuation">(</span>DataLoader<span class="token punctuation">(</span>it<span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>CPU times: user 8 ms, sys: 36 ms, total: 44 ms
+Wall time: 104 ms
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">(</span>TensorBase<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">pass</span>
+
+<span class="token keyword">for</span> nw <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> A<span class="token punctuation">(</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dl <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span><span class="token punctuation">[</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">]</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span>nw<span class="token punctuation">)</span>
+    b <span class="token operator">=</span> first<span class="token punctuation">(</span>dl<span class="token punctuation">)</span>
+    test_eq<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> A<span class="token punctuation">)</span>
+
+    t <span class="token operator">=</span> <span class="token punctuation">(</span>A<span class="token punctuation">(</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+    dl <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span><span class="token punctuation">[</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">]</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span>nw<span class="token punctuation">)</span>
+    b <span class="token operator">=</span> first<span class="token punctuation">(</span>dl<span class="token punctuation">)</span>
+    test_eq<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> A<span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">(</span>TensorBase<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">pass</span>
+t <span class="token operator">=</span> A<span class="token punctuation">(</span>tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+tdl <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span><span class="token punctuation">[</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">,</span>t<span class="token punctuation">]</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> after_batch<span class="token operator">=</span>to_device<span class="token punctuation">)</span>
+b <span class="token operator">=</span> first<span class="token punctuation">(</span>tdl<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> A<span class="token punctuation">)</span>
+
+<span class="token comment"># Unknown attributes are delegated to `dataset`</span>
+test_eq<span class="token punctuation">(</span>tdl<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fastai/assets/js/app.e4c088e4.js" defer></script><script src="/fastai/assets/js/2.f1c4f916.js" defer></script><script src="/fastai/assets/js/25.7912d1b1.js" defer></script>
+  </body>
+</html>

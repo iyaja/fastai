@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Learner for the vision applications</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="Welcome to fastai">
+    <link rel="preload" href="/fastai/assets/css/0.styles.24b54ae9.css" as="style"><link rel="preload" href="/fastai/assets/js/app.e4c088e4.js" as="script"><link rel="preload" href="/fastai/assets/js/2.f1c4f916.js" as="script"><link rel="preload" href="/fastai/assets/js/71.8c3557b5.js" as="script"><link rel="prefetch" href="/fastai/assets/js/10.99994145.js"><link rel="prefetch" href="/fastai/assets/js/11.08687312.js"><link rel="prefetch" href="/fastai/assets/js/12.40b88a98.js"><link rel="prefetch" href="/fastai/assets/js/13.83861397.js"><link rel="prefetch" href="/fastai/assets/js/14.3a1586b8.js"><link rel="prefetch" href="/fastai/assets/js/15.1cbd093c.js"><link rel="prefetch" href="/fastai/assets/js/16.c850565b.js"><link rel="prefetch" href="/fastai/assets/js/17.9c3f07b2.js"><link rel="prefetch" href="/fastai/assets/js/18.db37b5bb.js"><link rel="prefetch" href="/fastai/assets/js/19.c91272fe.js"><link rel="prefetch" href="/fastai/assets/js/20.a9c5f90d.js"><link rel="prefetch" href="/fastai/assets/js/21.e40307f7.js"><link rel="prefetch" href="/fastai/assets/js/22.8fcdc465.js"><link rel="prefetch" href="/fastai/assets/js/23.14fb4a2d.js"><link rel="prefetch" href="/fastai/assets/js/24.720b52ea.js"><link rel="prefetch" href="/fastai/assets/js/25.7912d1b1.js"><link rel="prefetch" href="/fastai/assets/js/26.366239e0.js"><link rel="prefetch" href="/fastai/assets/js/27.6db2df9e.js"><link rel="prefetch" href="/fastai/assets/js/28.ffbcb114.js"><link rel="prefetch" href="/fastai/assets/js/29.7b21b9fd.js"><link rel="prefetch" href="/fastai/assets/js/3.6e2ab6c3.js"><link rel="prefetch" href="/fastai/assets/js/30.248393fd.js"><link rel="prefetch" href="/fastai/assets/js/31.b22a56a0.js"><link rel="prefetch" href="/fastai/assets/js/32.85f7da41.js"><link rel="prefetch" href="/fastai/assets/js/33.e44ef8ee.js"><link rel="prefetch" href="/fastai/assets/js/34.9ce56e10.js"><link rel="prefetch" href="/fastai/assets/js/35.4bdc5816.js"><link rel="prefetch" href="/fastai/assets/js/36.67e5f7d9.js"><link rel="prefetch" href="/fastai/assets/js/37.36c20575.js"><link rel="prefetch" href="/fastai/assets/js/38.06c462ff.js"><link rel="prefetch" href="/fastai/assets/js/39.749b6672.js"><link rel="prefetch" href="/fastai/assets/js/4.a083dd6e.js"><link rel="prefetch" href="/fastai/assets/js/40.c732859b.js"><link rel="prefetch" href="/fastai/assets/js/41.4474ab47.js"><link rel="prefetch" href="/fastai/assets/js/42.5ee2fc2f.js"><link rel="prefetch" href="/fastai/assets/js/43.cc635513.js"><link rel="prefetch" href="/fastai/assets/js/44.152c8da5.js"><link rel="prefetch" href="/fastai/assets/js/45.4cff1d71.js"><link rel="prefetch" href="/fastai/assets/js/46.85dce95d.js"><link rel="prefetch" href="/fastai/assets/js/47.59fb5617.js"><link rel="prefetch" href="/fastai/assets/js/48.f20ef06e.js"><link rel="prefetch" href="/fastai/assets/js/49.9625880a.js"><link rel="prefetch" href="/fastai/assets/js/5.bb68e855.js"><link rel="prefetch" href="/fastai/assets/js/50.b2e6dee9.js"><link rel="prefetch" href="/fastai/assets/js/51.267442e2.js"><link rel="prefetch" href="/fastai/assets/js/52.10494ddd.js"><link rel="prefetch" href="/fastai/assets/js/53.093941a1.js"><link rel="prefetch" href="/fastai/assets/js/54.fbc03694.js"><link rel="prefetch" href="/fastai/assets/js/55.0b1efc19.js"><link rel="prefetch" href="/fastai/assets/js/56.5f3c1da5.js"><link rel="prefetch" href="/fastai/assets/js/57.a3e942a9.js"><link rel="prefetch" href="/fastai/assets/js/58.d3ded5e3.js"><link rel="prefetch" href="/fastai/assets/js/59.ec1d3156.js"><link rel="prefetch" href="/fastai/assets/js/6.f6c9602c.js"><link rel="prefetch" href="/fastai/assets/js/60.37aa0b8a.js"><link rel="prefetch" href="/fastai/assets/js/61.ef622343.js"><link rel="prefetch" href="/fastai/assets/js/62.e733d0f9.js"><link rel="prefetch" href="/fastai/assets/js/63.a3aa571a.js"><link rel="prefetch" href="/fastai/assets/js/64.8b06642f.js"><link rel="prefetch" href="/fastai/assets/js/65.97cf2dfa.js"><link rel="prefetch" href="/fastai/assets/js/66.7f97711c.js"><link rel="prefetch" href="/fastai/assets/js/67.31ee059f.js"><link rel="prefetch" href="/fastai/assets/js/68.d013d2de.js"><link rel="prefetch" href="/fastai/assets/js/69.50b9f11d.js"><link rel="prefetch" href="/fastai/assets/js/7.c1cdf251.js"><link rel="prefetch" href="/fastai/assets/js/70.1b6f8370.js"><link rel="prefetch" href="/fastai/assets/js/72.2d857b7b.js"><link rel="prefetch" href="/fastai/assets/js/73.0be86c71.js"><link rel="prefetch" href="/fastai/assets/js/74.a9279ff6.js"><link rel="prefetch" href="/fastai/assets/js/75.f6ce5fb3.js"><link rel="prefetch" href="/fastai/assets/js/8.be08f3ee.js"><link rel="prefetch" href="/fastai/assets/js/9.209ff10c.js">
+    <link rel="stylesheet" href="/fastai/assets/css/0.styles.24b54ae9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fastai/" class="home-link router-link-active"><img src="https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Learner for the vision applications</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fastai/vision/learner.html#cut-a-pretrained-model" class="sidebar-link">Cut a pretrained model</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fastai/vision/learner.html#head-and-model" class="sidebar-link">Head and model</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fastai/vision/learner.html#learner-convenience-functions" class="sidebar-link">Learner convenience functions</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="learner-for-the-vision-applications"><a href="#learner-for-the-vision-applications" class="header-anchor">#</a> Learner for the vision applications</h1> <blockquote><p>All the functions necessary to build <code>Learner</code> suitable for transfer learning in computer vision</p></blockquote> <p>The most important functions of this module are <a href="/fastai/vision.learner.html#cnn_learner"><code>cnn_learner</code></a> and <a href="/fastai/vision.learner.html#unet_learner"><code>unet_learner</code></a>. They will help you define a <a href="/fastai/learner.html#Learner"><code>Learner</code></a> using a pretrained model. See the <a href="http://docs.fast.ai/tutorial.vision" target="_blank" rel="noopener noreferrer">vision tutorial<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> for examples of use.</p> <h2 id="cut-a-pretrained-model"><a href="#cut-a-pretrained-model" class="header-anchor">#</a> Cut a pretrained model</h2> <p>By default, the fastai library cuts a pretrained model at the pooling layer. This function helps detecting it.</p> <h4 id="has_pool_type" class="doc_header"><code>has_pool_type</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L17" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>has_pool_type</code>(<strong><code>m</code></strong>)</p></blockquote> <p>Return <code>True</code> if <code>m</code> is a pooling layer or has one in its children</p> <div class="language-python extra-class"><pre class="language-python"><code>m <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>AdaptiveAvgPool2d<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>MaxPool3d<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span> has_pool_type<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token punctuation">[</span>has_pool_type<span class="token punctuation">(</span>m_<span class="token punctuation">)</span> <span class="token keyword">for</span> m_ <span class="token keyword">in</span> m<span class="token punctuation">.</span>children<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token boolean">True</span><span class="token punctuation">,</span><span class="token boolean">False</span><span class="token punctuation">,</span><span class="token boolean">False</span><span class="token punctuation">,</span><span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="create_body" class="doc_header"><code>create_body</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L63" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>create_body</code>(<strong><code>arch</code></strong>, <strong><code>n_in</code></strong>=<em><code>3</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>cut</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Cut off the body of a typically pretrained <code>arch</code> as determined by <code>cut</code></p> <p><code>cut</code> can either be an integer, in which case we cut the model at the corresponding layer, or a function, in which case, this function returns <code>cut(model)</code>. It defaults to the first layer that contains some pooling otherwise.</p> <div class="language-python extra-class"><pre class="language-python"><code>tst <span class="token operator">=</span> <span class="token keyword">lambda</span> pretrained <span class="token punctuation">:</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Conv2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>BatchNorm2d<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>AvgPool2d<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+m <span class="token operator">=</span> create_body<span class="token punctuation">(</span>tst<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+m <span class="token operator">=</span> create_body<span class="token punctuation">(</span>tst<span class="token punctuation">,</span> cut<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+m <span class="token operator">=</span> create_body<span class="token punctuation">(</span>tst<span class="token punctuation">,</span> cut<span class="token operator">=</span>noop<span class="token punctuation">)</span>
+test_eq<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    m <span class="token operator">=</span> create_body<span class="token punctuation">(</span>tst<span class="token punctuation">,</span> n_in<span class="token operator">=</span>n<span class="token punctuation">)</span>
+    test_eq<span class="token punctuation">(</span>_get_first_layer<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>in_channels<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+</code></pre></div><h2 id="head-and-model"><a href="#head-and-model" class="header-anchor">#</a> Head and model</h2> <h4 id="create_head" class="doc_header"><code>create_head</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L76" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>create_head</code>(<strong><code>nf</code></strong>, <strong><code>n_out</code></strong>, <strong><code>lin_ftrs</code></strong>=<em><code>None</code></em>, <strong><code>ps</code></strong>=<em><code>0.5</code></em>, <strong><code>concat_pool</code></strong>=<em><code>True</code></em>, <strong><code>bn_final</code></strong>=<em><code>False</code></em>, <strong><code>lin_first</code></strong>=<em><code>False</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Model head that takes <code>nf</code> features, runs through <code>lin_ftrs</code>, and out <code>n_out</code> classes.</p> <p>The head begins with fastai's <a href="/fastai/layers.html#AdaptiveConcatPool2d"><code>AdaptiveConcatPool2d</code></a> if <code>concat_pool=True</code> otherwise, it uses traditional average pooling. Then it uses a <a href="/fastai/layers.html#Flatten"><code>Flatten</code></a> layer before going on blocks of <a href="/fastai/layers.html#BatchNorm"><code>BatchNorm</code></a>, <code>Dropout</code> and <code>Linear</code> layers (if <code>lin_first=True</code>, those are <code>Linear</code>, <a href="/fastai/layers.html#BatchNorm"><code>BatchNorm</code></a>, <code>Dropout</code>).</p> <p>Those blocks start at <code>nf</code>, then every element of <code>lin_ftrs</code> (defaults to <code>[512]</code>) and end at <code>n_out</code>. <code>ps</code> is a list of probabilities used for the dropouts (if you only pass 1, it will use half the value then that value as many times as necessary).</p> <p>If <code>bn_final=True</code>, a final <a href="/fastai/layers.html#BatchNorm"><code>BatchNorm</code></a> layer is added. If <code>y_range</code> is passed, the function adds a <a href="/fastai/layers.html#SigmoidRange"><code>SigmoidRange</code></a> to that range.</p> <div class="language-python extra-class"><pre class="language-python"><code>tst <span class="token operator">=</span> create_head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+tst
+</code></pre></div><div class="language- extra-class"><pre><code>Sequential(
+  (0): AdaptiveConcatPool2d(
+    (ap): AdaptiveAvgPool2d(output_size=1)
+    (mp): AdaptiveMaxPool2d(output_size=1)
+  )
+  (1): Flatten(full=False)
+  (2): BatchNorm1d(5, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (3): Dropout(p=0.25, inplace=False)
+  (4): Linear(in_features=5, out_features=512, bias=False)
+  (5): ReLU(inplace=True)
+  (6): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (7): Dropout(p=0.5, inplace=False)
+  (8): Linear(in_features=512, out_features=10, bias=False)
+)
+</code></pre></div><h4 id="create_cnn_model" class="doc_header"><code>create_cnn_model</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L96" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>create_cnn_model</code>(<strong><code>arch</code></strong>, <strong><code>n_out</code></strong>, <strong><code>cut</code></strong>=<em><code>None</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>n_in</code></strong>=<em><code>3</code></em>, <strong><code>init</code></strong>=<em><code>kaiming_normal_</code></em>, <strong><code>custom_head</code></strong>=<em><code>None</code></em>, <strong><code>concat_pool</code></strong>=<em><code>True</code></em>, <strong><code>lin_ftrs</code></strong>=<em><code>None</code></em>, <strong><code>ps</code></strong>=<em><code>0.5</code></em>, <strong><code>bn_final</code></strong>=<em><code>False</code></em>, <strong><code>lin_first</code></strong>=<em><code>False</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Create custom convnet architecture using <code>arch</code>, <code>n_in</code> and <code>n_out</code></p> <p>The model is cut according to <code>cut</code> and it may be <code>pretrained</code>, in which case, the proper set of weights is downloaded then loaded. <code>init</code> is applied to the head of the model, which is either created by <a href="/fastai/vision.learner.html#create_head"><code>create_head</code></a> (with <code>lin_ftrs</code>, <code>ps</code>, <code>concat_pool</code>, <code>bn_final</code>, <code>lin_first</code> and <code>y_range</code>) or is <code>custom_head</code>.</p> <div class="language-python extra-class"><pre class="language-python"><code>tst <span class="token operator">=</span> create_cnn_model<span class="token punctuation">(</span>models<span class="token punctuation">.</span>resnet18<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+tst <span class="token operator">=</span> create_cnn_model<span class="token punctuation">(</span>models<span class="token punctuation">.</span>resnet18<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> n_in<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="cnn_config" class="doc_header"><code>cnn_config</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L110" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>cnn_config</code>(<strong><code>cut</code></strong>=<em><code>None</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>n_in</code></strong>=<em><code>3</code></em>, <strong><code>init</code></strong>=<em><code>kaiming_normal_</code></em>, <strong><code>custom_head</code></strong>=<em><code>None</code></em>, <strong><code>concat_pool</code></strong>=<em><code>True</code></em>, <strong><code>lin_ftrs</code></strong>=<em><code>None</code></em>, <strong><code>ps</code></strong>=<em><code>0.5</code></em>, <strong><code>bn_final</code></strong>=<em><code>False</code></em>, <strong><code>lin_first</code></strong>=<em><code>False</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Convenience function to easily create a config for <a href="/fastai/vision.learner.html#create_cnn_model"><code>create_cnn_model</code></a></p> <div class="language-python extra-class"><pre class="language-python"><code>pets <span class="token operator">=</span> DataBlock<span class="token punctuation">(</span>blocks<span class="token operator">=</span><span class="token punctuation">(</span>ImageBlock<span class="token punctuation">,</span> CategoryBlock<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+                 get_items<span class="token operator">=</span>get_image_files<span class="token punctuation">,</span> 
+                 splitter<span class="token operator">=</span>RandomSplitter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 get_y<span class="token operator">=</span>RegexLabeller<span class="token punctuation">(</span>pat <span class="token operator">=</span> <span class="token string">r'/([^/]+)_\d+.jpg$'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dls <span class="token operator">=</span> pets<span class="token punctuation">.</span>dataloaders<span class="token punctuation">(</span>untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>PETS<span class="token punctuation">)</span><span class="token operator">/</span><span class="token string">&quot;images&quot;</span><span class="token punctuation">,</span> item_tfms<span class="token operator">=</span>RandomResizedCrop<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> min_scale<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">,</span>
+                        batch_tfms<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">*</span>aug_transforms<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token number">224</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>@log_args had an issue on DataLoader.__init__ -&gt; got an unexpected keyword argument 'item_tfms'
+@log_args had an issue on TfmdDL.__init__ -&gt; got an unexpected keyword argument 'item_tfms'
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># class ModelSplitter():</span>
+<span class="token comment">#     def __init__(self, idx): self.idx = idx</span>
+<span class="token comment">#     def split(self, m): return L(m[:self.idx], m[self.idx:]).map(params)</span>
+<span class="token comment">#     def __call__(self,): return {'cut':self.idx, 'split':self.split}</span>
+</code></pre></div><h4 id="default_split" class="doc_header"><code>default_split</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L116" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>default_split</code>(<strong><code>m</code></strong>)</p></blockquote> <p>Default split of a model between body and head</p> <p>To do transfer learning, you need to pass a <code>splitter</code> to <a href="/fastai/learner.html#Learner"><code>Learner</code></a>. This should be a function taking the model and returning a collection of parameter groups, e.g. a list of list of parameters.</p> <h2 id="learner-convenience-functions"><a href="#learner-convenience-functions" class="header-anchor">#</a> <a href="/fastai/learner.html#Learner"><code>Learner</code></a> convenience functions</h2> <h4 id="cnn_learner" class="doc_header"><code>cnn_learner</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L164" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>cnn_learner</code>(<strong><code>dls</code></strong>, <strong><code>arch</code></strong>, <strong><code>loss_func</code></strong>=<em><code>None</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>cut</code></strong>=<em><code>None</code></em>, <strong><code>splitter</code></strong>=<em><code>None</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>n_out</code></strong>=<em><code>None</code></em>, <strong><code>normalize</code></strong>=<em><code>True</code></em>, <strong><code>opt_func</code></strong>=<em><code>Adam</code></em>, <strong><code>lr</code></strong>=<em><code>0.001</code></em>, <strong><code>cbs</code></strong>=<em><code>None</code></em>, <strong><code>metrics</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>None</code></em>, <strong><code>model_dir</code></strong>=<em><code>'models'</code></em>, <strong><code>wd</code></strong>=<em><code>None</code></em>, <strong><code>wd_bn_bias</code></strong>=<em><code>False</code></em>, <strong><code>train_bn</code></strong>=<em><code>True</code></em>, <strong><code>moms</code></strong>=<em><code>(0.95, 0.85, 0.95)</code></em>)</p></blockquote> <p>Build a convnet style learner from <code>dls</code> and <code>arch</code></p> <p>The model is built from <code>arch</code> using the number of final activations inferred from <code>dls</code> if possible (otherwise pass a value to <code>n_out</code>). It might be <code>pretrained</code> and the architecture is cut and split using the default metadata of the model architecture (this can be customized by passing a <code>cut</code> or a <code>splitter</code>).</p> <p>To customize the model creation, use <a href="/fastai/vision.learner.html#cnn_config"><code>cnn_config</code></a> and pass the result to the <code>config</code> argument. There is just easy access to <code>y_range</code> because this argument is often used.</p> <p>If <code>normalize</code> and <code>pretrained</code> are <code>True</code>, this function adds a <code>Normalization</code> transform to the <code>dls</code> (if there is not already one) using the statistics of the pretrained model. That way, you won't ever forget to normalize your data in transfer learning.</p> <p>All other arguments are passed to <a href="/fastai/learner.html#Learner"><code>Learner</code></a>.</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>PETS<span class="token punctuation">)</span>
+fnames <span class="token operator">=</span> get_image_files<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">&quot;images&quot;</span><span class="token punctuation">)</span>
+pat <span class="token operator">=</span> <span class="token string">r'^(.*)_\d+.jpg$'</span>
+dls <span class="token operator">=</span> ImageDataLoaders<span class="token punctuation">.</span>from_name_re<span class="token punctuation">(</span>path<span class="token punctuation">,</span> fnames<span class="token punctuation">,</span> pat<span class="token punctuation">,</span> item_tfms<span class="token operator">=</span>Resize<span class="token punctuation">(</span><span class="token number">224</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>learn <span class="token operator">=</span> cnn_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> models<span class="token punctuation">.</span>resnet34<span class="token punctuation">,</span> loss_func<span class="token operator">=</span>CrossEntropyLossFlat<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> config<span class="token operator">=</span>cnn_config<span class="token punctuation">(</span>ps<span class="token operator">=</span><span class="token number">0.25</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="unet_config" class="doc_header"><code>unet_config</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L181" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>unet_config</code>(<strong><code>blur</code></strong>=<em><code>False</code></em>, <strong><code>blur_final</code></strong>=<em><code>True</code></em>, <strong><code>self_attention</code></strong>=<em><code>False</code></em>, <strong><code>y_range</code></strong>=<em><code>None</code></em>, <strong><code>last_cross</code></strong>=<em><code>True</code></em>, <strong><code>bottle</code></strong>=<em><code>False</code></em>, <strong><code>act_cls</code></strong>=<em><code>ReLU</code></em>, <strong><code>init</code></strong>=<em><code>kaiming_normal_</code></em>, <strong><code>norm_type</code></strong>=<em><code>None</code></em>)</p></blockquote> <p>Convenience function to easily create a config for <a href="/fastai/vision.models.unet.html#DynamicUnet"><code>DynamicUnet</code></a></p> <h4 id="unet_learner" class="doc_header"><code>unet_learner</code><a href="https://github.com/fastai/fastai/tree/master/fastai/vision/learner.py#L187" class="source_link" style="float:right;">[source]</a></h4> <blockquote><p><code>unet_learner</code>(<strong><code>dls</code></strong>, <strong><code>arch</code></strong>, <strong><code>loss_func</code></strong>=<em><code>None</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>cut</code></strong>=<em><code>None</code></em>, <strong><code>splitter</code></strong>=<em><code>None</code></em>, <strong><code>config</code></strong>=<em><code>None</code></em>, <strong><code>n_in</code></strong>=<em><code>3</code></em>, <strong><code>n_out</code></strong>=<em><code>None</code></em>, <strong><code>normalize</code></strong>=<em><code>True</code></em>, <strong><code>opt_func</code></strong>=<em><code>Adam</code></em>, <strong><code>lr</code></strong>=<em><code>0.001</code></em>, <strong><code>cbs</code></strong>=<em><code>None</code></em>, <strong><code>metrics</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>None</code></em>, <strong><code>model_dir</code></strong>=<em><code>'models'</code></em>, <strong><code>wd</code></strong>=<em><code>None</code></em>, <strong><code>wd_bn_bias</code></strong>=<em><code>False</code></em>, <strong><code>train_bn</code></strong>=<em><code>True</code></em>, <strong><code>moms</code></strong>=<em><code>(0.95, 0.85, 0.95)</code></em>)</p></blockquote> <p>Build a unet learner from <code>dls</code> and <code>arch</code></p> <p>The model is built from <code>arch</code> using the number of final filters inferred from <code>dls</code> if possible (otherwise pass a value to <code>n_out</code>). It might be <code>pretrained</code> and the architecture is cut and split using the default metadata of the model architecture (this can be customized by passing a <code>cut</code> or a <code>splitter</code>).</p> <p>To customize the model creation, use <a href="/fastai/vision.learner.html#unet_config"><code>unet_config</code></a> and pass the result to the <code>config</code> argument.</p> <p>If <code>normalize</code> and <code>pretrained</code> are <code>True</code>, this function adds a <code>Normalization</code> transform to the <code>dls</code> (if there is not already one) using the statistics of the pretrained model. That way, you won't ever forget to normalize your data in transfer learning.</p> <p>All other arguments are passed to <a href="/fastai/learner.html#Learner"><code>Learner</code></a>.</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>CAMVID_TINY<span class="token punctuation">)</span>
+fnames <span class="token operator">=</span> get_image_files<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'images'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">label_func</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> path<span class="token operator">/</span><span class="token string">'labels'</span><span class="token operator">/</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">.</span>stem<span class="token punctuation">}</span></span><span class="token string">_P</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">.</span>suffix<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+codes <span class="token operator">=</span> np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'codes.txt'</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    
+dls <span class="token operator">=</span> SegmentationDataLoaders<span class="token punctuation">.</span>from_label_func<span class="token punctuation">(</span>path<span class="token punctuation">,</span> fnames<span class="token punctuation">,</span> label_func<span class="token punctuation">,</span> codes<span class="token operator">=</span>codes<span class="token punctuation">)</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>learn <span class="token operator">=</span> unet_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> models<span class="token punctuation">.</span>resnet34<span class="token punctuation">,</span> loss_func<span class="token operator">=</span>CrossEntropyLossFlat<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fastai/assets/js/app.e4c088e4.js" defer></script><script src="/fastai/assets/js/2.f1c4f916.js" defer></script><script src="/fastai/assets/js/71.8c3557b5.js" defer></script>
+  </body>
+</html>
