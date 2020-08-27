@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>fastai applications - quick start</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="Welcome to fastai">
+    <link rel="preload" href="/fastai/assets/css/0.styles.d03aadf4.css" as="style"><link rel="preload" href="/fastai/assets/js/app.f17b0f11.js" as="script"><link rel="preload" href="/fastai/assets/js/3.7e8af7b4.js" as="script"><link rel="preload" href="/fastai/assets/js/38.29b7b3ca.js" as="script"><link rel="prefetch" href="/fastai/assets/js/10.8521128e.js"><link rel="prefetch" href="/fastai/assets/js/11.287f40d6.js"><link rel="prefetch" href="/fastai/assets/js/12.12842fbd.js"><link rel="prefetch" href="/fastai/assets/js/13.b531fd0e.js"><link rel="prefetch" href="/fastai/assets/js/14.3b85f440.js"><link rel="prefetch" href="/fastai/assets/js/15.015d175e.js"><link rel="prefetch" href="/fastai/assets/js/16.744581ff.js"><link rel="prefetch" href="/fastai/assets/js/17.5ea8f7a5.js"><link rel="prefetch" href="/fastai/assets/js/18.6325a7a3.js"><link rel="prefetch" href="/fastai/assets/js/19.12895d2e.js"><link rel="prefetch" href="/fastai/assets/js/20.421dab5c.js"><link rel="prefetch" href="/fastai/assets/js/21.d0965317.js"><link rel="prefetch" href="/fastai/assets/js/22.d4da69f5.js"><link rel="prefetch" href="/fastai/assets/js/23.eb6f27d0.js"><link rel="prefetch" href="/fastai/assets/js/24.7b39000f.js"><link rel="prefetch" href="/fastai/assets/js/25.4b2ae256.js"><link rel="prefetch" href="/fastai/assets/js/26.ed68ed51.js"><link rel="prefetch" href="/fastai/assets/js/27.fbc2137b.js"><link rel="prefetch" href="/fastai/assets/js/28.6c32e1f5.js"><link rel="prefetch" href="/fastai/assets/js/29.e8f4d3b8.js"><link rel="prefetch" href="/fastai/assets/js/30.f9987fa2.js"><link rel="prefetch" href="/fastai/assets/js/31.10dfab48.js"><link rel="prefetch" href="/fastai/assets/js/32.51ffa228.js"><link rel="prefetch" href="/fastai/assets/js/33.58064d56.js"><link rel="prefetch" href="/fastai/assets/js/34.ee932158.js"><link rel="prefetch" href="/fastai/assets/js/35.13e4d738.js"><link rel="prefetch" href="/fastai/assets/js/36.04e592b7.js"><link rel="prefetch" href="/fastai/assets/js/37.7cafae24.js"><link rel="prefetch" href="/fastai/assets/js/39.60cf076c.js"><link rel="prefetch" href="/fastai/assets/js/4.6279c390.js"><link rel="prefetch" href="/fastai/assets/js/40.ae925aa6.js"><link rel="prefetch" href="/fastai/assets/js/41.6f007865.js"><link rel="prefetch" href="/fastai/assets/js/42.ccc13ed7.js"><link rel="prefetch" href="/fastai/assets/js/43.2429f884.js"><link rel="prefetch" href="/fastai/assets/js/44.2d4ccb85.js"><link rel="prefetch" href="/fastai/assets/js/45.3c017ace.js"><link rel="prefetch" href="/fastai/assets/js/46.3caf88b0.js"><link rel="prefetch" href="/fastai/assets/js/47.a13286d5.js"><link rel="prefetch" href="/fastai/assets/js/48.551a5021.js"><link rel="prefetch" href="/fastai/assets/js/49.61f2131a.js"><link rel="prefetch" href="/fastai/assets/js/5.93fc1ade.js"><link rel="prefetch" href="/fastai/assets/js/50.372d1f7d.js"><link rel="prefetch" href="/fastai/assets/js/51.ed721b06.js"><link rel="prefetch" href="/fastai/assets/js/52.60718eb7.js"><link rel="prefetch" href="/fastai/assets/js/53.f65e2a2a.js"><link rel="prefetch" href="/fastai/assets/js/54.f9f76813.js"><link rel="prefetch" href="/fastai/assets/js/55.020bc688.js"><link rel="prefetch" href="/fastai/assets/js/56.c4856fc6.js"><link rel="prefetch" href="/fastai/assets/js/57.e115d83b.js"><link rel="prefetch" href="/fastai/assets/js/58.e58e0027.js"><link rel="prefetch" href="/fastai/assets/js/59.886eb077.js"><link rel="prefetch" href="/fastai/assets/js/6.5fa76b7a.js"><link rel="prefetch" href="/fastai/assets/js/60.c377d394.js"><link rel="prefetch" href="/fastai/assets/js/61.d6a10937.js"><link rel="prefetch" href="/fastai/assets/js/62.3f1bbe72.js"><link rel="prefetch" href="/fastai/assets/js/63.ea143add.js"><link rel="prefetch" href="/fastai/assets/js/64.4abe956e.js"><link rel="prefetch" href="/fastai/assets/js/65.f1204af6.js"><link rel="prefetch" href="/fastai/assets/js/66.e5904312.js"><link rel="prefetch" href="/fastai/assets/js/67.72451568.js"><link rel="prefetch" href="/fastai/assets/js/68.f4b4d8e2.js"><link rel="prefetch" href="/fastai/assets/js/69.2ef62d06.js"><link rel="prefetch" href="/fastai/assets/js/7.3e251b44.js"><link rel="prefetch" href="/fastai/assets/js/70.892242aa.js"><link rel="prefetch" href="/fastai/assets/js/71.348a11dd.js"><link rel="prefetch" href="/fastai/assets/js/72.735683a9.js"><link rel="prefetch" href="/fastai/assets/js/73.61a8ce4c.js"><link rel="prefetch" href="/fastai/assets/js/74.cec16c32.js"><link rel="prefetch" href="/fastai/assets/js/75.c261240c.js"><link rel="prefetch" href="/fastai/assets/js/76.d69068d6.js"><link rel="prefetch" href="/fastai/assets/js/8.c3d5d69d.js"><link rel="prefetch" href="/fastai/assets/js/9.ffbd18f1.js"><link rel="prefetch" href="/fastai/assets/js/vendors~docsearch.f5584d80.js">
+    <link rel="stylesheet" href="/fastai/assets/css/0.styles.d03aadf4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fastai/" class="home-link router-link-active"><img src="https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png" alt="" class="logo"> <!----></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>fastai applications - quick start</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fastai/quick_start.html#computer-vision-classification" class="sidebar-link">Computer vision classification</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fastai/quick_start.html#computer-vision-segmentation" class="sidebar-link">Computer vision segmentation</a></li></ul></li><li><a href="/fastai/quick_start.html#natural-language-processing" class="sidebar-link">Natural language processing</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fastai/quick_start.html#tabular" class="sidebar-link">Tabular</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fastai/quick_start.html#recommendation-systems" class="sidebar-link">Recommendation systems</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="fastai-applications-quick-start"><a href="#fastai-applications-quick-start" class="header-anchor">#</a> fastai applications - quick start</h1> <p>fastai's applications all use the same basic steps and code:</p> <ul><li>Create appropriate <a href="/fastai/data.core.html#DataLoaders"><code>DataLoaders</code></a></li> <li>Create a <a href="/fastai/learner.html#Learner"><code>Learner</code></a></li> <li>Call a <em>fit</em> method</li> <li>Make predictions or view results.</li></ul> <p>In this quick start, we'll show these steps for a wide range of difference applications and datasets. As you'll see, the code in each case is extremely similar, despite the very different models and data being used.</p> <h2 id="computer-vision-classification"><a href="#computer-vision-classification" class="header-anchor">#</a> Computer vision classification</h2> <p>The code below does the following things:</p> <ol><li>A dataset called the <a href="http://www.robots.ox.ac.uk/~vgg/data/pets/" target="_blank" rel="noopener noreferrer">Oxford-IIIT Pet Dataset<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> that contains 7,349 images of cats and dogs from 37 different breeds will be downloaded from the fast.ai datasets collection to the GPU server you are using, and will then be extracted.</li> <li>A <em>pretrained model</em> that has already been trained on 1.3 million images, using a competition-winning model will be downloaded from the internet.</li> <li>The pretrained model will be <em>fine-tuned</em> using the latest advances in transfer learning, to create a model that is specially customized for recognizing dogs and cats.</li></ol> <p>The first two steps only need to be run once. If you run it again, it will use the dataset and model that have already been downloaded, rather than downloading them again.</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>PETS<span class="token punctuation">)</span><span class="token operator">/</span><span class="token string">'images'</span>
+
+<span class="token keyword">def</span> <span class="token function">is_cat</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+dls <span class="token operator">=</span> ImageDataLoaders<span class="token punctuation">.</span>from_name_func<span class="token punctuation">(</span>
+    path<span class="token punctuation">,</span> get_image_files<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> valid_pct<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">,</span>
+    label_func<span class="token operator">=</span>is_cat<span class="token punctuation">,</span> item_tfms<span class="token operator">=</span>Resize<span class="token punctuation">(</span><span class="token number">224</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+learn <span class="token operator">=</span> cnn_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> resnet34<span class="token punctuation">,</span> metrics<span class="token operator">=</span>error_rate<span class="token punctuation">)</span>
+learn<span class="token punctuation">.</span>fine_tune<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>error_rate</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.173790</td> <td>0.018827</td> <td>0.005413</td> <td>00:12</td></tr></tbody></table> <table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>error_rate</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.064295</td> <td>0.013404</td> <td>0.005413</td> <td>00:14</td></tr></tbody></table> <p>You can do inference with your model with the <code>predict</code> method:</p> <div class="language-python extra-class"><pre class="language-python"><code>img <span class="token operator">=</span> PILImage<span class="token punctuation">.</span>create<span class="token punctuation">(</span><span class="token string">'images/cat.jpg'</span><span class="token punctuation">)</span>
+img
+</code></pre></div><p><img src="output_6_0.png" alt="png"></p> <div class="language-python extra-class"><pre class="language-python"><code>is_cat<span class="token punctuation">,</span>_<span class="token punctuation">,</span>probs <span class="token operator">=</span> learn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Is this a cat?: </span><span class="token interpolation"><span class="token punctuation">{</span>is_cat<span class="token punctuation">}</span></span><span class="token string">.&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Probability it's a cat: </span><span class="token interpolation"><span class="token punctuation">{</span>probs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token format-spec">.6f</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>Is this a cat?: True.
+Probability it's a cat: 0.999722
+</code></pre></div><h3 id="computer-vision-segmentation"><a href="#computer-vision-segmentation" class="header-anchor">#</a> Computer vision segmentation</h3> <p>Here is how we can train a segmentation model with fastai, using a subset of the <a href="http://www0.cs.ucl.ac.uk/staff/G.Brostow/papers/Brostow_2009-PRL.pdf" target="_blank" rel="noopener noreferrer"><em>Camvid</em> dataset<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>:</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>CAMVID_TINY<span class="token punctuation">)</span>
+dls <span class="token operator">=</span> SegmentationDataLoaders<span class="token punctuation">.</span>from_label_func<span class="token punctuation">(</span>
+    path<span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> fnames <span class="token operator">=</span> get_image_files<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">&quot;images&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    label_func <span class="token operator">=</span> <span class="token keyword">lambda</span> o<span class="token punctuation">:</span> path<span class="token operator">/</span><span class="token string">'labels'</span><span class="token operator">/</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>o<span class="token punctuation">.</span>stem<span class="token punctuation">}</span></span><span class="token string">_P</span><span class="token interpolation"><span class="token punctuation">{</span>o<span class="token punctuation">.</span>suffix<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">,</span>
+    codes <span class="token operator">=</span> np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'codes.txt'</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+learn <span class="token operator">=</span> unet_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> resnet34<span class="token punctuation">)</span>
+learn<span class="token punctuation">.</span>fine_tune<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>2.882460</td> <td>2.096923</td> <td>00:03</td></tr></tbody></table> <table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>1.602270</td> <td>1.543582</td> <td>00:02</td></tr> <tr><td>1</td> <td>1.417732</td> <td>1.225782</td> <td>00:02</td></tr> <tr><td>2</td> <td>1.307454</td> <td>1.071090</td> <td>00:02</td></tr> <tr><td>3</td> <td>1.170338</td> <td>0.884501</td> <td>00:02</td></tr> <tr><td>4</td> <td>1.047036</td> <td>0.799820</td> <td>00:02</td></tr> <tr><td>5</td> <td>0.947965</td> <td>0.754801</td> <td>00:02</td></tr> <tr><td>6</td> <td>0.868178</td> <td>0.728161</td> <td>00:02</td></tr> <tr><td>7</td> <td>0.804939</td> <td>0.720942</td> <td>00:02</td></tr></tbody></table> <p>We can visualize how well it achieved its task, by asking the model to color-code each pixel of an image.</p> <div class="language-python extra-class"><pre class="language-python"><code>learn<span class="token punctuation">.</span>show_results<span class="token punctuation">(</span>max_n<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="output_12_1.png" alt="png"></p> <h2 id="natural-language-processing"><a href="#natural-language-processing" class="header-anchor">#</a> Natural language processing</h2> <p>Here is all of the code necessary to train a model that can classify the sentiment of a movie review better than anything that existed in the world just five years ago:</p> <div class="language-python extra-class"><pre class="language-python"><code>dls <span class="token operator">=</span> TextDataLoaders<span class="token punctuation">.</span>from_folder<span class="token punctuation">(</span>untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>IMDB<span class="token punctuation">)</span><span class="token punctuation">,</span> valid<span class="token operator">=</span><span class="token string">'test'</span><span class="token punctuation">)</span>
+learn <span class="token operator">=</span> text_classifier_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> AWD_LSTM<span class="token punctuation">,</span> drop_mult<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span>accuracy<span class="token punctuation">)</span>
+learn<span class="token punctuation">.</span>fine_tune<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>accuracy</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.594912</td> <td>0.407416</td> <td>0.823640</td> <td>01:35</td></tr></tbody></table> <table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>accuracy</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.268259</td> <td>0.316242</td> <td>0.876000</td> <td>03:03</td></tr> <tr><td>1</td> <td>0.184861</td> <td>0.246242</td> <td>0.898080</td> <td>03:10</td></tr> <tr><td>2</td> <td>0.136392</td> <td>0.220086</td> <td>0.918200</td> <td>03:16</td></tr> <tr><td>3</td> <td>0.106423</td> <td>0.191092</td> <td>0.931360</td> <td>03:15</td></tr></tbody></table> <p>Predictions are done with <code>predict</code>, as for computer vision:</p> <div class="language-python extra-class"><pre class="language-python"><code>learn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span><span class="token string">&quot;I really liked that movie!&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language- extra-class"><pre><code>('pos', tensor(1), tensor([0.0041, 0.9959]))
+</code></pre></div><h2 id="tabular"><a href="#tabular" class="header-anchor">#</a> Tabular</h2> <p>Building models from plain <em>tabular</em> data is done using the same basic steps as the previous models. Here is the code necessary to train a model that will predict whether a person is a high-income earner, based on their socioeconomic background:</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>ADULT_SAMPLE<span class="token punctuation">)</span>
+
+dls <span class="token operator">=</span> TabularDataLoaders<span class="token punctuation">.</span>from_csv<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'adult.csv'</span><span class="token punctuation">,</span> path<span class="token operator">=</span>path<span class="token punctuation">,</span> y_names<span class="token operator">=</span><span class="token string">&quot;salary&quot;</span><span class="token punctuation">,</span>
+    cat_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'workclass'</span><span class="token punctuation">,</span> <span class="token string">'education'</span><span class="token punctuation">,</span> <span class="token string">'marital-status'</span><span class="token punctuation">,</span> <span class="token string">'occupation'</span><span class="token punctuation">,</span>
+                 <span class="token string">'relationship'</span><span class="token punctuation">,</span> <span class="token string">'race'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    cont_names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token string">'fnlwgt'</span><span class="token punctuation">,</span> <span class="token string">'education-num'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    procs <span class="token operator">=</span> <span class="token punctuation">[</span>Categorify<span class="token punctuation">,</span> FillMissing<span class="token punctuation">,</span> Normalize<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+learn <span class="token operator">=</span> tabular_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> metrics<span class="token operator">=</span>accuracy<span class="token punctuation">)</span>
+learn<span class="token punctuation">.</span>fit_one_cycle<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>accuracy</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.372298</td> <td>0.359698</td> <td>0.829392</td> <td>00:06</td></tr> <tr><td>1</td> <td>0.357530</td> <td>0.349440</td> <td>0.837377</td> <td>00:06</td></tr></tbody></table> <h2 id="recommendation-systems"><a href="#recommendation-systems" class="header-anchor">#</a> Recommendation systems</h2> <p>Recommendation systems are very important, particularly in e-commerce. Companies like Amazon and Netflix try hard to recommend products or movies that users might like. Here's how to train a model that will predict movies people might like, based on their previous viewing habits, using the <a href="https://doi.org/10.1145/2827872" target="_blank" rel="noopener noreferrer">MovieLens dataset<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>:</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>ML_SAMPLE<span class="token punctuation">)</span>
+dls <span class="token operator">=</span> CollabDataLoaders<span class="token punctuation">.</span>from_csv<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'ratings.csv'</span><span class="token punctuation">)</span>
+learn <span class="token operator">=</span> collab_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> y_range<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">5.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+learn<span class="token punctuation">.</span>fine_tune<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>1.497551</td> <td>1.435720</td> <td>00:00</td></tr></tbody></table> <table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>1.332337</td> <td>1.351769</td> <td>00:00</td></tr> <tr><td>1</td> <td>1.180177</td> <td>1.046801</td> <td>00:00</td></tr> <tr><td>2</td> <td>0.913091</td> <td>0.799319</td> <td>00:00</td></tr> <tr><td>3</td> <td>0.749806</td> <td>0.731218</td> <td>00:00</td></tr> <tr><td>4</td> <td>0.686577</td> <td>0.715372</td> <td>00:00</td></tr> <tr><td>5</td> <td>0.665683</td> <td>0.713309</td> <td>00:00</td></tr></tbody></table> <p>We can use the same <code>show_results</code> call we saw earlier to view a few examples of user and movie IDs, actual ratings, and predictions:</p> <div class="language-python extra-class"><pre class="language-python"><code>learn<span class="token punctuation">.</span>show_results<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:right;"><th></th> <th>userId</th> <th>movieId</th> <th>rating</th> <th>rating_pred</th></tr></thead> <tbody><tr><th>0</th> <td>5.0</td> <td>3.0</td> <td>2.0</td> <td>3.985477</td></tr> <tr><th>1</th> <td>1.0</td> <td>62.0</td> <td>4.0</td> <td>3.629225</td></tr> <tr><th>2</th> <td>91.0</td> <td>81.0</td> <td>1.0</td> <td>3.476280</td></tr> <tr><th>3</th> <td>48.0</td> <td>26.0</td> <td>2.0</td> <td>4.043919</td></tr> <tr><th>4</th> <td>75.0</td> <td>54.0</td> <td>3.0</td> <td>4.023057</td></tr> <tr><th>5</th> <td>42.0</td> <td>22.0</td> <td>3.0</td> <td>3.509050</td></tr> <tr><th>6</th> <td>40.0</td> <td>59.0</td> <td>4.0</td> <td>3.686552</td></tr> <tr><th>7</th> <td>63.0</td> <td>77.0</td> <td>3.0</td> <td>2.862713</td></tr> <tr><th>8</th> <td>32.0</td> <td>61.0</td> <td>4.0</td> <td>4.356578</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fastai/assets/js/app.f17b0f11.js" defer></script><script src="/fastai/assets/js/3.7e8af7b4.js" defer></script><script src="/fastai/assets/js/38.29b7b3ca.js" defer></script>
+  </body>
+</html>

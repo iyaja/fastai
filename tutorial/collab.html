@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Collaborative filtering tutorial</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="Welcome to fastai">
+    <link rel="preload" href="/fastai/assets/css/0.styles.d03aadf4.css" as="style"><link rel="preload" href="/fastai/assets/js/app.f17b0f11.js" as="script"><link rel="preload" href="/fastai/assets/js/3.7e8af7b4.js" as="script"><link rel="preload" href="/fastai/assets/js/55.020bc688.js" as="script"><link rel="prefetch" href="/fastai/assets/js/10.8521128e.js"><link rel="prefetch" href="/fastai/assets/js/11.287f40d6.js"><link rel="prefetch" href="/fastai/assets/js/12.12842fbd.js"><link rel="prefetch" href="/fastai/assets/js/13.b531fd0e.js"><link rel="prefetch" href="/fastai/assets/js/14.3b85f440.js"><link rel="prefetch" href="/fastai/assets/js/15.015d175e.js"><link rel="prefetch" href="/fastai/assets/js/16.744581ff.js"><link rel="prefetch" href="/fastai/assets/js/17.5ea8f7a5.js"><link rel="prefetch" href="/fastai/assets/js/18.6325a7a3.js"><link rel="prefetch" href="/fastai/assets/js/19.12895d2e.js"><link rel="prefetch" href="/fastai/assets/js/20.421dab5c.js"><link rel="prefetch" href="/fastai/assets/js/21.d0965317.js"><link rel="prefetch" href="/fastai/assets/js/22.d4da69f5.js"><link rel="prefetch" href="/fastai/assets/js/23.eb6f27d0.js"><link rel="prefetch" href="/fastai/assets/js/24.7b39000f.js"><link rel="prefetch" href="/fastai/assets/js/25.4b2ae256.js"><link rel="prefetch" href="/fastai/assets/js/26.ed68ed51.js"><link rel="prefetch" href="/fastai/assets/js/27.fbc2137b.js"><link rel="prefetch" href="/fastai/assets/js/28.6c32e1f5.js"><link rel="prefetch" href="/fastai/assets/js/29.e8f4d3b8.js"><link rel="prefetch" href="/fastai/assets/js/30.f9987fa2.js"><link rel="prefetch" href="/fastai/assets/js/31.10dfab48.js"><link rel="prefetch" href="/fastai/assets/js/32.51ffa228.js"><link rel="prefetch" href="/fastai/assets/js/33.58064d56.js"><link rel="prefetch" href="/fastai/assets/js/34.ee932158.js"><link rel="prefetch" href="/fastai/assets/js/35.13e4d738.js"><link rel="prefetch" href="/fastai/assets/js/36.04e592b7.js"><link rel="prefetch" href="/fastai/assets/js/37.7cafae24.js"><link rel="prefetch" href="/fastai/assets/js/38.29b7b3ca.js"><link rel="prefetch" href="/fastai/assets/js/39.60cf076c.js"><link rel="prefetch" href="/fastai/assets/js/4.6279c390.js"><link rel="prefetch" href="/fastai/assets/js/40.ae925aa6.js"><link rel="prefetch" href="/fastai/assets/js/41.6f007865.js"><link rel="prefetch" href="/fastai/assets/js/42.ccc13ed7.js"><link rel="prefetch" href="/fastai/assets/js/43.2429f884.js"><link rel="prefetch" href="/fastai/assets/js/44.2d4ccb85.js"><link rel="prefetch" href="/fastai/assets/js/45.3c017ace.js"><link rel="prefetch" href="/fastai/assets/js/46.3caf88b0.js"><link rel="prefetch" href="/fastai/assets/js/47.a13286d5.js"><link rel="prefetch" href="/fastai/assets/js/48.551a5021.js"><link rel="prefetch" href="/fastai/assets/js/49.61f2131a.js"><link rel="prefetch" href="/fastai/assets/js/5.93fc1ade.js"><link rel="prefetch" href="/fastai/assets/js/50.372d1f7d.js"><link rel="prefetch" href="/fastai/assets/js/51.ed721b06.js"><link rel="prefetch" href="/fastai/assets/js/52.60718eb7.js"><link rel="prefetch" href="/fastai/assets/js/53.f65e2a2a.js"><link rel="prefetch" href="/fastai/assets/js/54.f9f76813.js"><link rel="prefetch" href="/fastai/assets/js/56.c4856fc6.js"><link rel="prefetch" href="/fastai/assets/js/57.e115d83b.js"><link rel="prefetch" href="/fastai/assets/js/58.e58e0027.js"><link rel="prefetch" href="/fastai/assets/js/59.886eb077.js"><link rel="prefetch" href="/fastai/assets/js/6.5fa76b7a.js"><link rel="prefetch" href="/fastai/assets/js/60.c377d394.js"><link rel="prefetch" href="/fastai/assets/js/61.d6a10937.js"><link rel="prefetch" href="/fastai/assets/js/62.3f1bbe72.js"><link rel="prefetch" href="/fastai/assets/js/63.ea143add.js"><link rel="prefetch" href="/fastai/assets/js/64.4abe956e.js"><link rel="prefetch" href="/fastai/assets/js/65.f1204af6.js"><link rel="prefetch" href="/fastai/assets/js/66.e5904312.js"><link rel="prefetch" href="/fastai/assets/js/67.72451568.js"><link rel="prefetch" href="/fastai/assets/js/68.f4b4d8e2.js"><link rel="prefetch" href="/fastai/assets/js/69.2ef62d06.js"><link rel="prefetch" href="/fastai/assets/js/7.3e251b44.js"><link rel="prefetch" href="/fastai/assets/js/70.892242aa.js"><link rel="prefetch" href="/fastai/assets/js/71.348a11dd.js"><link rel="prefetch" href="/fastai/assets/js/72.735683a9.js"><link rel="prefetch" href="/fastai/assets/js/73.61a8ce4c.js"><link rel="prefetch" href="/fastai/assets/js/74.cec16c32.js"><link rel="prefetch" href="/fastai/assets/js/75.c261240c.js"><link rel="prefetch" href="/fastai/assets/js/76.d69068d6.js"><link rel="prefetch" href="/fastai/assets/js/8.c3d5d69d.js"><link rel="prefetch" href="/fastai/assets/js/9.ffbd18f1.js"><link rel="prefetch" href="/fastai/assets/js/vendors~docsearch.f5584d80.js">
+    <link rel="stylesheet" href="/fastai/assets/css/0.styles.d03aadf4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fastai/" class="home-link router-link-active"><img src="https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png" alt="" class="logo"> <!----></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tutorial/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Getting Started" class="dropdown-title"><span class="title">Getting Started</span> <span class="arrow down"></span></button> <button type="button" aria-label="Getting Started" class="mobile-dropdown-title"><span class="title">Getting Started</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/quick_start.html" class="nav-link">
+  Quick Start
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tutorials" class="dropdown-title"><span class="title">Tutorials</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tutorials" class="mobile-dropdown-title"><span class="title">Tutorials</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tutorial/overview.html" class="nav-link">
+  Overview
+</a></li><li class="dropdown-item"><h4>
+          Beginners
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/vision.html" class="nav-link">
+  Vision Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/text.html" class="nav-link">
+  Text Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/tabular.html" class="nav-link">
+  Tabular Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/colab.html" class="nav-link">
+  Colab Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Intermediate
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/datablock.html" class="nav-link">
+  Data Block Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/imagenette.html" class="nav-link">
+  Imagenette Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/pets.html" class="nav-link">
+  Pets Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/transformers.html" class="nav-link">
+  Transformers Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/tutorial/wikitext.html" class="nav-link">
+  Wikitext Tutorial
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Advanced
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/tutorial/siamese.html" class="nav-link">
+  Siamese Tutorial
+</a></li><li class="dropdown-subitem"><a href="/fastai/dev-setup.html" class="nav-link">
+  Developer Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Training" class="dropdown-title"><span class="title">Training</span> <span class="arrow down"></span></button> <button type="button" aria-label="Training" class="mobile-dropdown-title"><span class="title">Training</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/training/learner.html" class="nav-link">
+  Training Loop
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/optimizer.html" class="nav-link">
+  Optimizer
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/metrics.html" class="nav-link">
+  Metrics
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/interpret.html" class="nav-link">
+  Interpretation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/training/distributed.html" class="nav-link">
+  Distributed
+</a></li><li class="dropdown-item"><h4>
+          Callbacks
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/callback/core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/schedule.html" class="nav-link">
+  Schedulers
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/hook.html" class="nav-link">
+  Hooks and callbacks
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/fp16.html" class="nav-link">
+  Mixed precision
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/mixup.html" class="nav-link">
+  Mixup
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/cutmix.html" class="nav-link">
+  Cutmix
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/tracker.html" class="nav-link">
+  Tracker
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/training.html" class="nav-link">
+  Training
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/rnn.html" class="nav-link">
+  RNN
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/data.html" class="nav-link">
+  Data
+</a></li><li class="dropdown-subitem"><a href="/fastai/callback/progress.html" class="nav-link">
+  Progress
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Data" class="dropdown-title"><span class="title">Data</span> <span class="arrow down"></span></button> <button type="button" aria-label="Data" class="mobile-dropdown-title"><span class="title">Data</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/data/block.html" class="nav-link">
+  Data Blocks
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/transforms.html" class="nav-link">
+  Data Transforms
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/external.html" class="nav-link">
+  Data External
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/core.html" class="nav-link">
+  Data Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/data/load.html" class="nav-link">
+  DataLoaders
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Core" class="dropdown-title"><span class="title">Core</span> <span class="arrow down"></span></button> <button type="button" aria-label="Core" class="mobile-dropdown-title"><span class="title">Core</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/torch_core.html" class="nav-link">
+  PyTorch Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/layers.html" class="nav-link">
+  Layers
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vision" class="dropdown-title"><span class="title">Vision</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vision" class="mobile-dropdown-title"><span class="title">Vision</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/vision/learner.html" class="nav-link">
+  Vision Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/augment.html" class="nav-link">
+  Vision Data Augmentation
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/data.html" class="nav-link">
+  Vision Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/core.html" class="nav-link">
+  Vision Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/utils.html" class="nav-link">
+  Vision Utils
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/vision/widgets.html" class="nav-link">
+  Vision Widgets
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/vision/models.xresnet.html" class="nav-link">
+  XResNet
+</a></li><li class="dropdown-subitem"><a href="/fastai/vision/models.unet.html" class="nav-link">
+  UNet
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Text" class="dropdown-title"><span class="title">Text</span> <span class="arrow down"></span></button> <button type="button" aria-label="Text" class="mobile-dropdown-title"><span class="title">Text</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/text/core.html" class="nav-link">
+  Text Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/data.html" class="nav-link">
+  Text Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/text/learner.html" class="nav-link">
+  Text Learner
+</a></li><li class="dropdown-item"><h4>
+          Models
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fastai/text/models.core.html" class="nav-link">
+  Core
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.awdlstm.html" class="nav-link">
+  AWD LSTM
+</a></li><li class="dropdown-subitem"><a href="/fastai/text/models.qrnn.html" class="nav-link">
+  QRNN
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tabular" class="dropdown-title"><span class="title">Tabular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tabular" class="mobile-dropdown-title"><span class="title">Tabular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/tabular/core.html" class="nav-link">
+  Tabular Core
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/data.html" class="nav-link">
+  Tabular Data
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/learner.html" class="nav-link">
+  Tabular Learner
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/tabular/model.html" class="nav-link">
+  Tabular Model
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/collab.html" class="nav-link">
+  Collab
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Medical" class="dropdown-title"><span class="title">Medical</span> <span class="arrow down"></span></button> <button type="button" aria-label="Medical" class="mobile-dropdown-title"><span class="title">Medical</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fastai/medical/imaging.html" class="nav-link">
+  Medical imagery
+</a></li><li class="dropdown-item"><!----> <a href="/fastai/medical/text.html" class="nav-link">
+  Medical text
+</a></li></ul></div></div> <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Collaborative filtering tutorial</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fastai/tutorial/collab.html#training-a-model" class="sidebar-link">Training a model</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fastai/tutorial/collab.html#interpretation" class="sidebar-link">Interpretation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fastai/tutorial/collab.html#movie-bias" class="sidebar-link">Movie bias</a></li><li class="sidebar-sub-header"><a href="/fastai/tutorial/collab.html#movie-weights" class="sidebar-link">Movie weights</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="collaborative-filtering-tutorial"><a href="#collaborative-filtering-tutorial" class="header-anchor">#</a> Collaborative filtering tutorial</h1> <blockquote><p>Using the fastai library for collaborative filtering.</p></blockquote> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> fastai<span class="token punctuation">.</span>tabular<span class="token punctuation">.</span><span class="token builtin">all</span> <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> fastai<span class="token punctuation">.</span>collab <span class="token keyword">import</span> <span class="token operator">*</span>
+</code></pre></div><p>This tutorial highlights on how to quickly build a <a href="/fastai/learner.html#Learner"><code>Learner</code></a> and train a model on collaborative filtering tasks.</p> <h2 id="training-a-model"><a href="#training-a-model" class="header-anchor">#</a> Training a model</h2> <p>For this tutorial, we will use the <a href="https://grouplens.org/datasets/movielens/100k/" target="_blank" rel="noopener noreferrer">Movielens 100k data dataset<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. We can download it easily and decompress it with the following function:</p> <div class="language-python extra-class"><pre class="language-python"><code>path <span class="token operator">=</span> untar_data<span class="token punctuation">(</span>URLs<span class="token punctuation">.</span>ML_100k<span class="token punctuation">)</span>
+</code></pre></div><p>The main table is in <code>u.data</code>. Since it's not a proper csv, we have to specify a few things while opening it: the tab delimiter, the columns we want to keep and their names.</p> <div class="language-python extra-class"><pre class="language-python"><code>ratings <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'u.data'</span><span class="token punctuation">,</span> delimiter<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+                      usecols<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">,</span><span class="token string">'movie'</span><span class="token punctuation">,</span><span class="token string">'rating'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ratings<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div><style scoped="scoped">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;!--beforebegin--&gt;&lt;div class=&quot;language- extra-class&quot;&gt;&lt;!--afterbegin--&gt;&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!--beforeend--&gt;&lt;/div&gt;&lt;!--afterend--&gt;</style> <table border="1" class="dataframe"><thead><tr style="text-align:right;"><th></th> <th>user</th> <th>movie</th> <th>rating</th></tr></thead> <tbody><tr><th>0</th> <td>196</td> <td>242</td> <td>3</td></tr> <tr><th>1</th> <td>186</td> <td>302</td> <td>3</td></tr> <tr><th>2</th> <td>22</td> <td>377</td> <td>1</td></tr> <tr><th>3</th> <td>244</td> <td>51</td> <td>2</td></tr> <tr><th>4</th> <td>166</td> <td>346</td> <td>1</td></tr></tbody></table></div> <p>Movie ids are not ideal to look at things, so we load the corresponding movie id to the title that is in the table <code>u.item</code>:</p> <div class="language-python extra-class"><pre class="language-python"><code>movies <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>path<span class="token operator">/</span><span class="token string">'u.item'</span><span class="token punctuation">,</span>  delimiter<span class="token operator">=</span><span class="token string">'|'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'latin-1'</span><span class="token punctuation">,</span>
+                     usecols<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> names<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'movie'</span><span class="token punctuation">,</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+movies<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div><style scoped="scoped">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;!--beforebegin--&gt;&lt;div class=&quot;language- extra-class&quot;&gt;&lt;!--afterbegin--&gt;&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!--beforeend--&gt;&lt;/div&gt;&lt;!--afterend--&gt;</style> <table border="1" class="dataframe"><thead><tr style="text-align:right;"><th></th> <th>movie</th> <th>title</th></tr></thead> <tbody><tr><th>0</th> <td>1</td> <td>Toy Story (1995)</td></tr> <tr><th>1</th> <td>2</td> <td>GoldenEye (1995)</td></tr> <tr><th>2</th> <td>3</td> <td>Four Rooms (1995)</td></tr> <tr><th>3</th> <td>4</td> <td>Get Shorty (1995)</td></tr> <tr><th>4</th> <td>5</td> <td>Copycat (1995)</td></tr></tbody></table></div> <p>Next we merge it to our ratings table:</p> <div class="language-python extra-class"><pre class="language-python"><code>ratings <span class="token operator">=</span> ratings<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>movies<span class="token punctuation">)</span>
+ratings<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div><style scoped="scoped">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;!--beforebegin--&gt;&lt;div class=&quot;language- extra-class&quot;&gt;&lt;!--afterbegin--&gt;&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!--beforeend--&gt;&lt;/div&gt;&lt;!--afterend--&gt;</style> <table border="1" class="dataframe"><thead><tr style="text-align:right;"><th></th> <th>user</th> <th>movie</th> <th>rating</th> <th>title</th></tr></thead> <tbody><tr><th>0</th> <td>196</td> <td>242</td> <td>3</td> <td>Kolya (1996)</td></tr> <tr><th>1</th> <td>63</td> <td>242</td> <td>3</td> <td>Kolya (1996)</td></tr> <tr><th>2</th> <td>226</td> <td>242</td> <td>5</td> <td>Kolya (1996)</td></tr> <tr><th>3</th> <td>154</td> <td>242</td> <td>3</td> <td>Kolya (1996)</td></tr> <tr><th>4</th> <td>306</td> <td>242</td> <td>5</td> <td>Kolya (1996)</td></tr></tbody></table></div> <p>We can then build a <a href="/fastai/data.core.html#DataLoaders"><code>DataLoaders</code></a> object from this table. By default, it takes the first column for user, the second column for the item (here our movies) and the third column for the ratings. We need to change the value of <code>item_name</code> in our case, to use the titles instead of the ids:</p> <div class="language-python extra-class"><pre class="language-python"><code>dls <span class="token operator">=</span> CollabDataLoaders<span class="token punctuation">.</span>from_df<span class="token punctuation">(</span>ratings<span class="token punctuation">,</span> item_name<span class="token operator">=</span><span class="token string">'title'</span><span class="token punctuation">,</span> bs<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">)</span>
+</code></pre></div><p>In all applications, when the data has been assembled in a <a href="/fastai/data.core.html#DataLoaders"><code>DataLoaders</code></a>, you can have a look at it with the <code>show_batch</code> method:</p> <div class="language-python extra-class"><pre class="language-python"><code>dls<span class="token punctuation">.</span>show_batch<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:right;"><th></th> <th>user</th> <th>title</th> <th>rating</th></tr></thead> <tbody><tr><th>0</th> <td>181</td> <td>Substitute, The (1996)</td> <td>1</td></tr> <tr><th>1</th> <td>189</td> <td>Ulee's Gold (1997)</td> <td>3</td></tr> <tr><th>2</th> <td>6</td> <td>L.A. Confidential (1997)</td> <td>4</td></tr> <tr><th>3</th> <td>849</td> <td>Net, The (1995)</td> <td>5</td></tr> <tr><th>4</th> <td>435</td> <td>Blade Runner (1982)</td> <td>4</td></tr> <tr><th>5</th> <td>718</td> <td>My Best Friend's Wedding (1997)</td> <td>4</td></tr> <tr><th>6</th> <td>279</td> <td>I Love Trouble (1994)</td> <td>2</td></tr> <tr><th>7</th> <td>561</td> <td>Clockwork Orange, A (1971)</td> <td>4</td></tr> <tr><th>8</th> <td>87</td> <td>Fish Called Wanda, A (1988)</td> <td>5</td></tr> <tr><th>9</th> <td>774</td> <td>Crow, The (1994)</td> <td>3</td></tr></tbody></table> <p>fastai can create and train a collaborative filtering model by using <a href="/fastai/collab.html#collab_learner"><code>collab_learner</code></a>:</p> <div class="language-python extra-class"><pre class="language-python"><code>learn <span class="token operator">=</span> collab_learner<span class="token punctuation">(</span>dls<span class="token punctuation">,</span> n_factors<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> y_range<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>It uses a simple dot product model with 50 latent factors. To train it using the 1cycle policy, we just run this command:</p> <div class="language-python extra-class"><pre class="language-python"><code>learn<span class="token punctuation">.</span>fit_one_cycle<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5e</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> wd<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+</code></pre></div><table border="1" class="dataframe"><thead><tr style="text-align:left;"><th>epoch</th> <th>train_loss</th> <th>valid_loss</th> <th>time</th></tr></thead> <tbody><tr><td>0</td> <td>0.967653</td> <td>0.942309</td> <td>00:10</td></tr> <tr><td>1</td> <td>0.843426</td> <td>0.869254</td> <td>00:10</td></tr> <tr><td>2</td> <td>0.733788</td> <td>0.823143</td> <td>00:10</td></tr> <tr><td>3</td> <td>0.593507</td> <td>0.811050</td> <td>00:10</td></tr> <tr><td>4</td> <td>0.480942</td> <td>0.811475</td> <td>00:10</td></tr></tbody></table> <p>Here's <a href="https://www.librec.net/release/v1.3/example.html" target="_blank" rel="noopener noreferrer">some benchmarks<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> on the same dataset for the popular Librec system for collaborative filtering. They show best results based on RMSE of 0.91 (scroll down to the 100k dataset), which corresponds to an MSE of <code>0.91**2 = 0.83</code>. So in less than a minute, we got pretty good results!</p> <h2 id="interpretation"><a href="#interpretation" class="header-anchor">#</a> Interpretation</h2> <p>Let's analyze the results of our previous model. We will keep the 1000 most rated movies for this:</p> <div class="language-python extra-class"><pre class="language-python"><code>g <span class="token operator">=</span> ratings<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'rating'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span>
+top_movies <span class="token operator">=</span> g<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">.</span>values<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">]</span>
+top_movies<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>array(['Star Wars (1977)', 'Contact (1997)', 'Fargo (1996)',
+       'Return of the Jedi (1983)', 'Liar Liar (1997)',
+       'English Patient, The (1996)', 'Scream (1996)', 'Toy Story (1995)',
+       'Air Force One (1997)', 'Independence Day (ID4) (1996)'],
+      dtype=object)
+</code></pre></div><h3 id="movie-bias"><a href="#movie-bias" class="header-anchor">#</a> Movie bias</h3> <p>Our model has learned one bias per movie, a unique number independent of users that can be interpreted as the intrinsic &quot;value&quot; of the movie. We can grab the bias of each movie in our <code>top_movies</code> list with the following command:</p> <div class="language-python extra-class"><pre class="language-python"><code>movie_bias <span class="token operator">=</span> learn<span class="token punctuation">.</span>model<span class="token punctuation">.</span>bias<span class="token punctuation">(</span>top_movies<span class="token punctuation">,</span> is_item<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+movie_bias<span class="token punctuation">.</span>shape
+</code></pre></div><div class="language- extra-class"><pre><code>torch.Size([1000])
+</code></pre></div><p>Let's compare those biases with the average ratings:</p> <div class="language-python extra-class"><pre class="language-python"><code>mean_ratings <span class="token operator">=</span> ratings<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'rating'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+movie_ratings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> i<span class="token punctuation">,</span> mean_ratings<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i<span class="token punctuation">,</span>b <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>top_movies<span class="token punctuation">,</span>movie_bias<span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre></div><p>Now let's have a look at the movies with the worst bias:</p> <div class="language-python extra-class"><pre class="language-python"><code>item0 <span class="token operator">=</span> <span class="token keyword">lambda</span> o<span class="token punctuation">:</span>o<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_ratings<span class="token punctuation">,</span> key<span class="token operator">=</span>item0<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(-0.3489),
+  'Children of the Corn: The Gathering (1996)',
+  1.3157894736842106),
+ (tensor(-0.3407), 'Leave It to Beaver (1997)', 1.8409090909090908),
+ (tensor(-0.3304), 'Cable Guy, The (1996)', 2.339622641509434),
+ (tensor(-0.2763),
+  'Lawnmower Man 2: Beyond Cyberspace (1996)',
+  1.7142857142857142),
+ (tensor(-0.2607), &quot;McHale's Navy (1997)&quot;, 2.1884057971014492),
+ (tensor(-0.2572), 'Grease 2 (1982)', 2.0),
+ (tensor(-0.2482), 'Kansas City (1996)', 2.260869565217391),
+ (tensor(-0.2479), 'Crow: City of Angels, The (1996)', 1.9487179487179487),
+ (tensor(-0.2388), 'Free Willy 3: The Rescue (1997)', 1.7407407407407407),
+ (tensor(-0.2338), 'Keys to Tulsa (1997)', 2.24),
+ (tensor(-0.2305), 'Beautician and the Beast, The (1997)', 2.313953488372093),
+ (tensor(-0.2205), 'Escape from L.A. (1996)', 2.4615384615384617),
+ (tensor(-0.2192), 'Beverly Hills Ninja (1997)', 2.3125),
+ (tensor(-0.2179), 'Mortal Kombat: Annihilation (1997)', 1.9534883720930232),
+ (tensor(-0.2150), 'Thinner (1996)', 2.4489795918367347)]
+</code></pre></div><p>Or the ones with the best bias:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_ratings<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> o<span class="token punctuation">:</span> o<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(0.6052), 'As Good As It Gets (1997)', 4.196428571428571),
+ (tensor(0.5778), 'Titanic (1997)', 4.2457142857142856),
+ (tensor(0.5565), 'Shawshank Redemption, The (1994)', 4.445229681978798),
+ (tensor(0.5460), 'L.A. Confidential (1997)', 4.161616161616162),
+ (tensor(0.5264), 'Silence of the Lambs, The (1991)', 4.28974358974359),
+ (tensor(0.5125), 'Star Wars (1977)', 4.3584905660377355),
+ (tensor(0.4862), &quot;Schindler's List (1993)&quot;, 4.466442953020135),
+ (tensor(0.4851), 'Rear Window (1954)', 4.3875598086124405),
+ (tensor(0.4671), 'Godfather, The (1972)', 4.283292978208232),
+ (tensor(0.4668), 'Apt Pupil (1998)', 4.1),
+ (tensor(0.4614), &quot;One Flew Over the Cuckoo's Nest (1975)&quot;, 4.291666666666667),
+ (tensor(0.4606), 'Good Will Hunting (1997)', 4.262626262626263),
+ (tensor(0.4572), 'Contact (1997)', 3.8035363457760316),
+ (tensor(0.4529), 'Close Shave, A (1995)', 4.491071428571429),
+ (tensor(0.4410), 'Wrong Trousers, The (1993)', 4.466101694915254)]
+</code></pre></div><p>There is certainly a strong correlation!</p> <h3 id="movie-weights"><a href="#movie-weights" class="header-anchor">#</a> Movie weights</h3> <p>Now let's try to analyze the latent factors our model has learned. We can grab the weights for each movie in <code>top_movies</code> the same way as we did for the bias before.</p> <div class="language-python extra-class"><pre class="language-python"><code>movie_w <span class="token operator">=</span> learn<span class="token punctuation">.</span>model<span class="token punctuation">.</span>weight<span class="token punctuation">(</span>top_movies<span class="token punctuation">,</span> is_item<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+movie_w<span class="token punctuation">.</span>shape
+</code></pre></div><div class="language- extra-class"><pre><code>torch.Size([1000, 50])
+</code></pre></div><p>Let's try a PCA to reduce the dimensions and see if we can see what the model learned:</p> <div class="language-python extra-class"><pre class="language-python"><code>movie_pca <span class="token operator">=</span> movie_w<span class="token punctuation">.</span>pca<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+movie_pca<span class="token punctuation">.</span>shape
+</code></pre></div><div class="language- extra-class"><pre><code>torch.Size([1000, 3])
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code>fac0<span class="token punctuation">,</span>fac1<span class="token punctuation">,</span>fac2 <span class="token operator">=</span> movie_pca<span class="token punctuation">.</span>t<span class="token punctuation">(</span><span class="token punctuation">)</span>
+movie_comp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> f<span class="token punctuation">,</span>i <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>fac0<span class="token punctuation">,</span> top_movies<span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre></div><p>Here are the highest score on the first dimension:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_comp<span class="token punctuation">,</span> key<span class="token operator">=</span>itemgetter<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(1.1481), 'Casablanca (1942)'),
+ (tensor(1.0816), 'Chinatown (1974)'),
+ (tensor(1.0486), 'Lawrence of Arabia (1962)'),
+ (tensor(1.0459), 'Wrong Trousers, The (1993)'),
+ (tensor(1.0282), 'Secrets &amp; Lies (1996)'),
+ (tensor(1.0245), '12 Angry Men (1957)'),
+ (tensor(1.0095), 'Some Folks Call It a Sling Blade (1993)'),
+ (tensor(0.9874), 'Close Shave, A (1995)'),
+ (tensor(0.9800), 'Wallace &amp; Gromit: The Best of Aardman Animation (1996)'),
+ (tensor(0.9791), 'Citizen Kane (1941)')]
+</code></pre></div><p>And the worst:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_comp<span class="token punctuation">,</span> key<span class="token operator">=</span>itemgetter<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(-1.2520), 'Home Alone 3 (1997)'),
+ (tensor(-1.2118), 'Jungle2Jungle (1997)'),
+ (tensor(-1.1282), 'Stupids, The (1996)'),
+ (tensor(-1.1229), 'Free Willy 3: The Rescue (1997)'),
+ (tensor(-1.1161), 'Leave It to Beaver (1997)'),
+ (tensor(-1.0821), 'Children of the Corn: The Gathering (1996)'),
+ (tensor(-1.0703), &quot;McHale's Navy (1997)&quot;),
+ (tensor(-1.0695), 'Bio-Dome (1996)'),
+ (tensor(-1.0652), 'Batman &amp; Robin (1997)'),
+ (tensor(-1.0627), 'Cowboy Way, The (1994)')]
+</code></pre></div><p>Same thing for our second dimension:</p> <div class="language-python extra-class"><pre class="language-python"><code>movie_comp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> f<span class="token punctuation">,</span>i <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>fac1<span class="token punctuation">,</span> top_movies<span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_comp<span class="token punctuation">,</span> key<span class="token operator">=</span>itemgetter<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(1.1196), 'Braveheart (1995)'),
+ (tensor(1.0969), 'Raiders of the Lost Ark (1981)'),
+ (tensor(1.0365), 'Independence Day (ID4) (1996)'),
+ (tensor(0.9631), 'Titanic (1997)'),
+ (tensor(0.9450), 'American President, The (1995)'),
+ (tensor(0.8893), 'Forrest Gump (1994)'),
+ (tensor(0.8757), 'Hunt for Red October, The (1990)'),
+ (tensor(0.8638), 'Pretty Woman (1990)'),
+ (tensor(0.8019), 'Miracle on 34th Street (1994)'),
+ (tensor(0.7956), 'True Lies (1994)')]
+</code></pre></div><div class="language-python extra-class"><pre class="language-python"><code><span class="token builtin">sorted</span><span class="token punctuation">(</span>movie_comp<span class="token punctuation">,</span> key<span class="token operator">=</span>itemgetter<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language- extra-class"><pre><code>[(tensor(-0.9231), 'Ready to Wear (Pret-A-Porter) (1994)'),
+ (tensor(-0.8948), 'Dead Man (1995)'),
+ (tensor(-0.8816), 'Clockwork Orange, A (1971)'),
+ (tensor(-0.8697), 'Three Colors: Blue (1993)'),
+ (tensor(-0.8425), 'Beavis and Butt-head Do America (1996)'),
+ (tensor(-0.8047), 'Cable Guy, The (1996)'),
+ (tensor(-0.7832), 'Nosferatu (Nosferatu, eine Symphonie des Grauens) (1922)'),
+ (tensor(-0.7662), 'Exotica (1994)'),
+ (tensor(-0.7546), 'Spice World (1997)'),
+ (tensor(-0.7491), 'Heavenly Creatures (1994)')]
+</code></pre></div><p>And we can even plot the movies according to their scores on those dimensions:</p> <div class="language-python extra-class"><pre class="language-python"><code>idxs <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>top_movies<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+idxs <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+X <span class="token operator">=</span> fac0<span class="token punctuation">[</span>idxs<span class="token punctuation">]</span>
+Y <span class="token operator">=</span> fac2<span class="token punctuation">[</span>idxs<span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>top_movies<span class="token punctuation">[</span>idxs<span class="token punctuation">]</span><span class="token punctuation">,</span> X<span class="token punctuation">,</span> Y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    plt<span class="token punctuation">.</span>text<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>i<span class="token punctuation">,</span> color<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.7</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="output_49_0.png" alt="png"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fastai/assets/js/app.f17b0f11.js" defer></script><script src="/fastai/assets/js/3.7e8af7b4.js" defer></script><script src="/fastai/assets/js/55.020bc688.js" defer></script>
+  </body>
+</html>
