@@ -7,6 +7,9 @@ themeConfig:
   logo: 'https://images.exxactcorp.com/CMS/landing-page/resource-center/supported-software/logo/Deep-Learning/fastai-logo.png'
   repo: 'fastai/fastai'
   repoLabel: 'GitHub'
+  algolia:
+    apiKey: '50038e91df1b8fc12eec16b113b48613'
+    indexName: 'fast_ai'
   sidebar: 'auto'
   sidebarDepth: 4
   displayAllHeaders: true
